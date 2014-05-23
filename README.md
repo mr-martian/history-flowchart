@@ -8,6 +8,7 @@ Remember to read all doc.txt files before proceeding (in case this wasn't obviou
 
 #File Structure
 - Code
+  - doc.txt
   - graph.lisp == graph maker
   - get-data.lisp == file system interface
   - Interface == human interface
@@ -27,12 +28,4 @@ Remember to read all doc.txt files before proceeding (in case this wasn't obviou
 
 #TODO list
 
-- [ ] complete levels list
-- [ ] name the levels
-- [ ] add essay database implementation details
-- [ ] finish code (remove placeholders)
-- [ ] answer following questions:
-  - [ ] how does the graph maker connect to the essay database?
-  - [ ] should events specify universe, or be stored separately?
-- [ ] make note of
-  - [ ] level list length largely lenient (can be changed)
+see doc.txt's for todo lists
