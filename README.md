@@ -15,14 +15,14 @@ Remember to read all doc.txt files before proceeding (in case this wasn't obviou
 - Data
  - doc.txt == data storage overview
  - human == human history
-   -- doc.txt == overview
-   -- settings.lisp == date arithmetic, location, etc.
-   -- AD_16.txt == events occuring in the 16th century AD
-   ...
+   - doc.txt == overview
+   - settings.lisp == date arithmetic, location, etc.
+   - AD_16.txt == events occuring in the 16th century AD
+   - ...
  - natural == pre-recorded history
-   -- doc.txt == overview
-   -- settings.lisp == date arithmetic, location, etc.
-   -- ...
+   - doc.txt == overview
+   - settings.lisp == date arithmetic, location, etc.
+   - ...
  - ...
 
 #TODO list
