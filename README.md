@@ -4,7 +4,7 @@ This program is intended to create flowcharts of history in the hope that this m
 
 It also has the capability to make graphs for other (fictional) universes.
 
-Remember to read all doc.txt files before proceeding (in case this wasn't obvious).
+Remember to read all doc.md files before proceeding (in case this wasn't obvious).
 
 ##File Structure
 - Code
