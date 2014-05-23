@@ -27,12 +27,12 @@ File Structure
 
 TODO list
 
-- [] complete levels list
-- [] name the levels
-- [] add essay database implementation details
-- [] finish code (remove placeholders)
-- [] answer following questions:
-  - [] how does the graph maker connect to the essay database?
-  - []should events specify universe, or be stored separately?
-- [] make note of
-  - [] level list length largely lenient (can be changed)
+- [ ] complete levels list
+- [ ] name the levels
+- [ ] add essay database implementation details
+- [ ] finish code (remove placeholders)
+- [ ] answer following questions:
+  - [ ] how does the graph maker connect to the essay database?
+  - [ ]should events specify universe, or be stored separately?
+- [ ] make note of
+  - [ ] level list length largely lenient (can be changed)
