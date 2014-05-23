@@ -33,6 +33,6 @@ TODO list
 - [ ] finish code (remove placeholders)
 - [ ] answer following questions:
   - [ ] how does the graph maker connect to the essay database?
-  - [ ]should events specify universe, or be stored separately?
+  - [ ] should events specify universe, or be stored separately?
 - [ ] make note of
   - [ ] level list length largely lenient (can be changed)
