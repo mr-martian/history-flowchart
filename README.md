@@ -6,7 +6,7 @@ It also has the capability to make graphs for other (fictional) universes.
 
 Remember to read all doc.txt files before proceeding (in case this wasn't obvious).
 
-File Structure
+#File Structure
 - Code
  - graph.lisp == graph maker
  - get-data.lisp == file system interface
@@ -25,7 +25,7 @@ File Structure
    ...
  - ...
 
-TODO list
+#TODO list
 
 - [ ] complete levels list
 - [ ] name the levels
