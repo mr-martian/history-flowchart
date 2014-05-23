@@ -13,7 +13,7 @@
    - [ ] interface with settings files
    - [ ] access data
    - [ ] link to essays (get summaries from there?)
-   - [x] convert location in data to 1-dimensional point (multi-dimensional scaling)
+   - [ ] convert location in data to 1-dimensional point (multi-dimensional scaling)
 - [ ] add web interface
    - [ ] for adding data
       - [ ] fixing other people's entries
