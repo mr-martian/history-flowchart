@@ -6,26 +6,5 @@ It also has the capability to make graphs for other (fictional) universes.
 
 Remember to read all doc.md files before proceeding (in case this wasn't obvious).
 
-##File Structure
-- Code
-  - doc.md
-  - graph.lisp == graph maker
-  - get-data.lisp == file system interface
-  - Interface == human interface
-     - [website stuff]
-- Data
-  - doc.md == data storage overview
-  - human == human history
-    - doc.md == overview
-    - settings.lisp == date arithmetic, location, etc.
-    - AD_16.txt == events occuring in the 16th century AD
-    - ...
-  - natural == pre-recorded history
-    - doc.md == overview
-    - settings.lisp == date arithmetic, location, etc.
-    - ...
-  - ...
-
-##TODO list
-
-see doc.md's for todo lists
+Data is events and effects, Code is the program.
+Check doc.md for a folders todo list.
