@@ -7,7 +7,7 @@
 (defun get-name (event)
     (car event))
 (defun get-link (event)
-	(format nil “historyflowchart.com/essays/event.php?u=~a, e=~a” (get-name event))) ;change if necessary
+	(format nil "historyflowchart.com/essays/event.php?u=~a, e=~a" (get-name event))) ;change if necessary
 (defun points-svg (events)
     (loop for ev in events collecting
         (format nil "<circle r=\"5\" stroke=\"black\" stroke-width=\"1\" cx=\"~d\" cy=\"~d\" fill=\"~a\" onclick=\"window.open('~a')\"><title>~a</title></circle>"
