@@ -1,8 +1,9 @@
 This folder contains all data regarding events in the various histories.
-A few things to take note of:
- - Each universe folder (UF) contains a doc.txt, please read it. It specifies:
+##A few things to take note of:
+ - Each universe folder (UF) contains a doc.md, please read it. It specifies:
    - Levels
    - File structure
+   - Todo list
  - Each UF also contains a settings.lisp file, which specifies:
    - Date arithmatic
    - Propper conversion from in-world locations to cartiesian coordinates (-> 1D handled elsewhere)
