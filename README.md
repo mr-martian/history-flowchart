@@ -6,26 +6,26 @@ It also has the capability to make graphs for other (fictional) universes.
 
 Remember to read all doc.txt files before proceeding (in case this wasn't obvious).
 
-#File Structure
+##File Structure
 - Code
-  - doc.txt
+  - doc.md
   - graph.lisp == graph maker
   - get-data.lisp == file system interface
   - Interface == human interface
      - [website stuff]
 - Data
-  - doc.txt == data storage overview
+  - doc.md == data storage overview
   - human == human history
-    - doc.txt == overview
+    - doc.md == overview
     - settings.lisp == date arithmetic, location, etc.
     - AD_16.txt == events occuring in the 16th century AD
     - ...
   - natural == pre-recorded history
-    - doc.txt == overview
+    - doc.md == overview
     - settings.lisp == date arithmetic, location, etc.
     - ...
   - ...
 
-#TODO list
+##TODO list
 
-see doc.txt's for todo lists
+see doc.md's for todo lists
