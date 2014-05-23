@@ -6,3 +6,18 @@ A few things to take note of:
  - Each UF also contains a settings.lisp file, which specifies:
    - Date arithmatic
    - Propper conversion from in-world locations to cartiesian coordinates (-> 1D handled elsewhere)
+ - Storage Format (please enter everything this way)
+   - Events: (name date level location PartOf description keywords)
+     - name: name withnotspaces (capitalization irrelevant, may contain, but not start with, numbers)
+     - date: format unique to each UF, consult relevant UFD for details
+     - level: importance, consult relevant UFD for numbering system
+     - location: geographic coordinates, consult relevant UFD for details
+     - PartOf: higher level events are composed of lower level events, e.g. PartOf for PearlHarbor would be WorldWar2
+     - description: 2-3 sentence summary of the event
+     - keywords: battle, election, etc.
+   - Effects: (from to type description keywords)
+     - from: cause (use the name used in the file)
+     - to: event caused/affected by from
+     - type: manner in which from affected/caused to (ideology, religion, politics, etc.)
+     - description: 2-3 sentence of how from casued to
+     - keywords: [examples go here]
