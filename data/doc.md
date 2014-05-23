@@ -14,11 +14,11 @@ This folder contains all data regarding events in the various histories.
      - level: importance, consult relevant UFD for numbering system
      - location: geographic coordinates, consult relevant UFD for details
      - PartOf: higher level events are composed of lower level events, e.g. PartOf for PearlHarbor would be WorldWar2
-     - description: 2-3 sentence summary of the event
+     - description: 2-3 sentence summary of the event (note: may be removed)
      - keywords: battle, election, etc.
    - Effects: (from to type description keywords)
      - from: cause (use the name used in the file)
      - to: event caused/affected by from
      - type: manner in which from affected/caused to (ideology, religion, politics, etc.)
-     - description: 2-3 sentence of how from casued to
+     - description: 2-3 sentence of how from casued to (note: may be removed)
      - keywords: [examples go here]
