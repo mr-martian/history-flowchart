@@ -4,10 +4,10 @@
     (let ((co (list (/ (- date graph-start) scale) 0)))
 	   	;convert geo-coords -> single number with multidimensional scaling
         co))
-(defun get-link (event)
-	“mail.google.com”) ;deal with once essay database implemented
 (defun get-name (event)
-    'Hithere)
+    (car event))
+(defun get-link (event)
+	(format nil “historyflowchart.com/essays/event.php?u=~a, e=~a” (get-name event))) ;change if necessary
 (defun points-svg (events)
     (loop for ev in events collecting
         (format nil "<circle r=\"5\" stroke=\"black\" stroke-width=\"1\" cx=\"~d\" cy=\"~d\" fill=\"~a\" onclick=\"window.open('~a')\"><title>~a</title></circle>"
