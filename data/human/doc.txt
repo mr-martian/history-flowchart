@@ -1,2 +1,0 @@
-This is the doc for the data regarding recorded human history.
-Add to the files as you wish, sorted by century (further subdivision may be necessary).
