@@ -1,2 +1,0 @@
-This is the doc for natural history (big bang -> evolution of humans).
-Add to the files as you wish, sorted by billions of years (further subdivision probably will not be necessary).
