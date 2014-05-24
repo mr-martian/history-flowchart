@@ -14,6 +14,7 @@
    - [ ] access data
    - [ ] link to essays (get summaries from there?)
    - [ ] convert location in data to 1-dimensional point (multi-dimensional scaling)
+   - [ ] interface with php script (sockets? or command line? (possible with php?))
 - [ ] add web interface
    - [ ] for adding data
       - [ ] fixing other people's entries
