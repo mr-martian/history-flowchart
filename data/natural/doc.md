@@ -9,6 +9,7 @@ Add to the files as you wish, sorted by billions of years (further subdivision p
 
 #Todo
 - [ ] settings.lisp
+- [ ] event_list.html (access file with php and list with alphabetical indexing)
 - [ ] Date system
 - [ ] Place system
 - [ ] Current data properly formatted
