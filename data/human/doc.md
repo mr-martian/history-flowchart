@@ -9,6 +9,7 @@ Add to the files as you wish, sorted by century (further subdivision may be nece
 
 #Todo
 - [ ] settings.lisp
+- [ ] event_list.html (access file with php and list with alphabetical indexing)
 - [ ] Date system
 - [ ] Place system
 - [x] Current data properly formatted
