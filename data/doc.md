@@ -5,7 +5,7 @@ This folder contains all data regarding events in the various histories.
    - File structure
    - Todo list
  - Each UF also contains a settings.lisp file, which specifies:
-   - Date arithmatic
+   - Date arithmetic
    - Propper conversion from in-world locations to cartiesian coordinates (-> 1D handled elsewhere)
  - Storage Format (please enter everything this way)
    - Events: (name date level location PartOf description keywords)
