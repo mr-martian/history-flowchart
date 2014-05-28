@@ -2,7 +2,12 @@ This is the doc for the data regarding recorded human history.
 Add to the files as you wish, sorted by century (further subdivision may be necessary).
 
 #Date
-[date system explanation here]
+(year day hour minute second)
+year - gregorian calendar
+day - Janruary 1 = 1, February 19 = 50, etc.
+hour - 0-23 ("military" time)
+minute - 0-59
+second - 0-59 (for the moment, leap seconds are not handled and probably never will be)
 
 #Place
 [specification for describing 1D or 2D location in space]
@@ -10,6 +15,6 @@ Add to the files as you wish, sorted by century (further subdivision may be nece
 #Todo
 - [ ] settings.lisp
 - [ ] event_list.html (access file with php and list with alphabetical indexing)
-- [ ] Date system
+- [x] Date system
 - [ ] Place system
 - [x] Current data properly formatted
