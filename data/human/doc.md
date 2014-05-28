@@ -3,11 +3,11 @@ Add to the files as you wish, sorted by century (further subdivision may be nece
 
 #Date
 (year day hour minute second)
-year - gregorian calendar
-day - Janruary 1 = 1, February 19 = 50, etc.
-hour - 0-23 ("military" time)
-minute - 0-59
-second - 0-59 (for the moment, leap seconds are not handled and probably never will be)
+- year - gregorian calendar
+- day - Janruary 1 = 1, February 19 = 50, etc.
+- hour - 0-23 ("military" time)
+- minute - 0-59
+- second - 0-59 (for the moment, leap seconds are not handled and probably never will be)
 
 hour, minute, second in Greenwich Mean Time
 
