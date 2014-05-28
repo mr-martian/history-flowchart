@@ -9,8 +9,11 @@ hour - 0-23 ("military" time)
 minute - 0-59
 second - 0-59 (for the moment, leap seconds are not handled and probably never will be)
 
+hour, minute, second in Greenwich Mean Time
+
 #Place
 [specification for describing 1D or 2D location in space]
+(either Longitude or Multidimentional Scaling [MDS])
 
 #Todo
 - [ ] settings.lisp
