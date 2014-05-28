@@ -6,7 +6,10 @@ This folder contains all data regarding events in the various histories.
    - Todo list
  - Each UF also contains a settings.lisp file, which specifies:
    - Date arithmetic
-   - Propper conversion from in-world locations to cartiesian coordinates (-> 1D handled elsewhere)
+   - Propper conversion to 1-D space coordinates
+   - Functions included:
+     - (get-time-coord event length) given the length of the graph and the event, calculates x-coordinate
+     - (get-space-coord event height) given the height of the graph and the event, calculates y-coordinate
  - Storage Format (please enter everything this way)
    - Events: (name date level location PartOf description keywords)
      - name: name withnotspaces (capitalization irrelevant, may contain, but not start with, numbers)
