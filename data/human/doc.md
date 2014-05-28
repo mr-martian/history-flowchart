@@ -12,8 +12,7 @@ second - 0-59 (for the moment, leap seconds are not handled and probably never w
 hour, minute, second in Greenwich Mean Time
 
 #Place
-[specification for describing 1D or 2D location in space]
-(either Longitude or Multidimentional Scaling [MDS])
+Either Longitude or Multidimentional Scaling (MDS).
 
 #Todo
 - [ ] settings.lisp
