@@ -27,5 +27,5 @@
 	(format t "This program really has no idea what it's doing.")
 	(setf *universe* 'human)
 	(get-settings))
-	;somehow get http GET parameters passed by request.html
+	;get comand line args passed by get_graph.php
 	;load settings, pass stuff to make-graph, output to file in args
