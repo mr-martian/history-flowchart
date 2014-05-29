@@ -1,13 +1,12 @@
 <html>
   <body>
     <?php
-      //using sockets get $result
-      $result = 5;
-      if (is_string($result){
-        print($result);}
-      else{
-        echo "An error has occured, please try again."; //add details
-      }
+      //add more stuff, directions, etc.
+      $file = tempnam("blah/blah/graphs", "graph116"); //make better names somehow, time maybe
+      exec(join(" ", array("graph.exe", $file, $_GET['event'], $_GET['start'], $_GET['end'])));
+      $graph = fopen($file, "r") or die("Unable to open file!");
+      echo fgets($graph);
+      fclose($graph);
     ?>
   </body>
 </html>
