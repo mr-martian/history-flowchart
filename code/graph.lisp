@@ -1,7 +1,8 @@
 (defvar *universe* 'human)
+(load "dirs")
 
 (defun get-settings ()
-	(load (format nil "path/to/data/~a/settings.lisp" *universe*)))
+	(load (format nil "~a/~a/settings.lisp" *data* *universe*)))
 (defun get-events (args) (with-open-file (...)))
 (defun get-effects (args) (with-open-file (...)))
 (defun get-coords (event l h)
@@ -9,7 +10,7 @@
 (defun get-name (event)
     (car event))
 (defun get-link (event)
-	(format nil "historyflowchart.com/essays/event.php?u=~a, e=~a" (get-name event))) ;change if necessary
+	(format nil "~a?u=~a, e=~a" *essays* *universe* (get-name event))) ;change if necessary
 (defun get-color (event)
 	'red)
 (defun points-svg (events)
