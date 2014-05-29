@@ -7,9 +7,9 @@
 let users save graph?
 
 ###TODO
-- [ ] learn PHP
-   - [ ] basics
-   - [ ] file handling
-- [ ] construct input getter
-- [ ] construct comunication with graph maker
+- [x] learn PHP
+   - [x] basics
+   - [x] file handling
+- [x] construct input getter
+- [x] construct comunication with graph maker
 - [ ] test it
