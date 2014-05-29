@@ -8,3 +8,7 @@ Remember to read all doc.md files before proceeding (in case this wasn't obvious
 
 Data is events and effects, Code is the program.
 Check doc.md for a folder's todo list.
+
+###TODO COUNT
+Code: 17
+Data: 5
