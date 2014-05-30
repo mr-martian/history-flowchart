@@ -13,7 +13,9 @@ hour, minute, second in Greenwich Mean Time
 
 #Place
 Store as (latitude longitude)
+
 Graph positioning is simply longitude
+
 (but MDS as a possible future replacement)
 
 #Todo
