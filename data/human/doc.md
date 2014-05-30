@@ -12,11 +12,13 @@ Add to the files as you wish, sorted by century (further subdivision may be nece
 hour, minute, second in Greenwich Mean Time
 
 #Place
-Either Longitude or Multidimentional Scaling (MDS).
+Store as (latitude longitude)
+Graph positioning is simply longitude
+(but MDS as a possible future replacement)
 
 #Todo
 - [ ] settings.lisp
 - [ ] event_list.html (access file with php and list with alphabetical indexing)
 - [x] Date system
-- [ ] Place system
+- [x] Place system
 - [x] Current data properly formatted
