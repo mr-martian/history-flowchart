@@ -10,6 +10,8 @@ This folder contains all data regarding events in the various histories.
    - Functions included:
      - (get-time-coord event length) given the length of the graph and the event, calculates x-coordinate
      - (get-space-coord event height) given the height of the graph and the event, calculates y-coordinate
+     - (get-event-color event) determines the color of an event (for distinguishing type of event)
+     - (get-effect-color effect) dertermines the color of an effect (for distinguishing type of effect)
  - Storage Format (please enter everything this way)
    - Events: (name date level location PartOf description keywords)
      - name: name withnotspaces (capitalization irrelevant, may contain, but not start with, numbers)
