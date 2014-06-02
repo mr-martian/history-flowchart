@@ -1,8 +1,3 @@
-
-
-
-
-
 ##TODO
 
 - [ ] add essay database
@@ -22,5 +17,7 @@
       - [ ] fixing other people's entries
    - [ ] for adding essays
       - [ ] commenting on others
-   - [x] for requesting graphs (may need more options)
+   - [ ] for requesting graphs (may need more options)
+      - [ ] add date selection
+      - [ ] add size selection
    - [ ] make it look nice
