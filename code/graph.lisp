@@ -41,4 +41,5 @@
 		(get-settings)))
 		;get comand line args passed by get_graph.php
 		;load settings, pass stuff to make-graph, output to file in args
-		;NEEDED SETTINGS: file, startdate, enddate, event, universe, length, height
+		;NEEDED SETTINGS (in order): file, universe, level, event, startdate, enddate, length, height
+		;date, length, height input not imlpemented. add defaults?
