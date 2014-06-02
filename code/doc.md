@@ -18,6 +18,5 @@
    - [ ] for adding essays
       - [ ] commenting on others
    - [ ] for requesting graphs (may need more options)
-      - [ ] add date selection
-      - [ ] add size selection
+      - see code/get_graph/doc.md
    - [ ] make it look nice
