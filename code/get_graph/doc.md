@@ -12,3 +12,7 @@
 - [ ] actually get date
    - [ ] make click&dragable timeline
 - [ ] test it
+
+#MAYBE
+- have alternate y-axes
+- get_data/get_other_data under advanced settings
