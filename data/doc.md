@@ -12,6 +12,9 @@ This folder contains all data regarding events in the various histories.
      - get_space_coord(event, height) given the height of the graph and the event, calculates y-coordinate
      - get_event_color(event) determines the color of an event (for distinguishing type of event)
      - get_effect_color(effect) dertermines the color of an effect (for distinguishing type of effect)
+     - find_event(name) returns event matching name
+     - search_before(event, date) returns events and effects connected to event after date
+     - search_after(event, date) returns events and effects connected to event before date
  - Storage Format (please enter everything this way)
    - Events: array(name, date, level, location, PartOf, description, keywords)
      - name: name withnospaces (capitalization irrelevant, may contain, but not start with, numbers)
