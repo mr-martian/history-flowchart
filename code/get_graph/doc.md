@@ -5,12 +5,12 @@
 4. get_date.php
 [get_other_data]
 5. get_graph.php
--> graph.lisp
 
 #TODO
 - [ ] get_other_data (height, width)
 - [ ] actually get date
    - [ ] make click&dragable timeline
+- [ ] finish get_graph.php (get_vfs())
 - [ ] test it
 
 #MAYBE
