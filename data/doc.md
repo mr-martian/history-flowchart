@@ -4,24 +4,24 @@ This folder contains all data regarding events in the various histories.
    - Levels
    - File structure
    - Todo list
- - Each UF also contains a settings.lisp file, which specifies:
+ - Each UF also contains a settings.php file, which specifies:
    - Date arithmetic
    - Propper conversion to 1-D space coordinates
    - Functions included:
-     - (get-time-coord event length) given the length of the graph and the event, calculates x-coordinate
-     - (get-space-coord event height) given the height of the graph and the event, calculates y-coordinate
-     - (get-event-color event) determines the color of an event (for distinguishing type of event)
-     - (get-effect-color effect) dertermines the color of an effect (for distinguishing type of effect)
+     - get-time-coord(event, length) given the length of the graph and the event, calculates x-coordinate
+     - get-space-coord(event, height) given the height of the graph and the event, calculates y-coordinate
+     - get-event-color(event) determines the color of an event (for distinguishing type of event)
+     - get-effect-color(effect) dertermines the color of an effect (for distinguishing type of effect)
  - Storage Format (please enter everything this way)
-   - Events: (name date level location PartOf description keywords)
-     - name: name withnotspaces (capitalization irrelevant, may contain, but not start with, numbers)
+   - Events: array(name, date, level, location, PartOf, description, keywords)
+     - name: name withnospaces (capitalization irrelevant, may contain, but not start with, numbers)
      - date: format unique to each UF, consult relevant UFD for details
      - level: importance, consult relevant UFD for numbering system
      - location: geographic coordinates, consult relevant UFD for details
      - PartOf: higher level events are composed of lower level events, e.g. PartOf for PearlHarbor would be WorldWar2
      - description: 2-3 sentence summary of the event (note: may be removed)
      - keywords: battle, election, etc.
-   - Effects: (from to type description keywords)
+   - Effects: array(from, to, type, description, keywords)
      - from: cause (use the name used in the file)
      - to: event caused/affected by from
      - type: manner in which from affected/caused to (ideology, religion, politics, etc.)
