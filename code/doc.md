@@ -8,6 +8,7 @@
    - [ ] interface with settings files
    - [ ] access data
    - [ ] link to essays (get summaries from there?)
+   - [ ] finish moving to entirely php
 - [ ] add web interface
    - [ ] for adding data
       - [ ] fixing other people's entries
