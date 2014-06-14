@@ -17,13 +17,15 @@
       else{
         echo "<p>Found multiple events, please select one.</p><br />";
         echo "<table border='1'>";
-        //Name CHAR(30), Universe CHAR(10), Level SMALLINT, Date CHAR(15), Location CHAR(15))
+        echo "<tr><th>Select</th><th>Universe</th><th>Name</th><th>Level</th><th>Date</th><th>Location</th></tr>";
         foreach ($list as $event) {
           echo "<tr>";
           echo "<td><a href='display_event.php?n=", $event['PID'], "' target='mainframe'>select</a></td>";
+          echo "<td>", $row['Universe'], "</td>";
           echo "<td>", $row['Name'], "</td>";
-          echo "<td>", $row['Name'], "</td>";
-          echo "<td>" . $row['LastName'] . "</td>";
+          echo "<td>", $row['Level'], "</td>";
+          echo "<td>", $row['Date'], "</td>";
+          echo "<td>", $row['Location'], "</td>";
           echo "</tr>";
         }
 
