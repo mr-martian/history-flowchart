@@ -8,8 +8,9 @@
 
 #TODO
 - [ ] get_other_data (height, width)
-- [ ] actually get date
+- [x] actually get date
    - [ ] make click&dragable timeline
+   - [ ] make more general (only works for human history right now)
 - [ ] finish get_graph.php (get_vfs())
 - [ ] test it
 
