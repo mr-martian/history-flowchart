@@ -12,7 +12,7 @@
         echo "<H1>ERROR: no effects found matching Universe=", $_GET['u'], ", From=", $_GET['f'], ", To=", $_GET['t'], "</H2>";
       }
       elseif (count($list) == 1){
-        echo "<iframe src='display_event.php?n=", $list[0]['PID'], "'></iframe>";
+        echo "<iframe src='display_effect.php?n=", $list[0]['PID'], "'></iframe>";
       }
       else{
         echo "<p>Found multiple events, please select one.</p><br />";
@@ -20,7 +20,7 @@
         echo "<tr><th>Select</th><th>Universe</th><th>From</th><th>To</th><th>Type</th></tr>";
         foreach ($list as $event) {
           echo "<tr>";
-          echo "<td><a href='display_event.php?n=", $event['PID'], "' target='mainframe'>select</a></td>";
+          echo "<td><a href='display_effect.php?n=", $event['PID'], "' target='mainframe'>select</a></td>";
           echo "<td>", $row['Universe'], "</td>";
           echo "<td>", $row['From'], "</td>";
           echo "<td>", $row['To'], "</td>";
