@@ -14,9 +14,11 @@ echo "<table>
 <th>Location</th>
 </tr>";
 
+$str = "<td><a href='get_graph.php?u=" . $_GET['u'] . "&lv=" . $_GET['level'] . "&e=";
+
 while($row = mysqli_fetch_array($result)) {
   echo "<tr>";
-  echo "<td>" . $row['Name'] . "</td>";
+  echo $str . $row['Name'] . "' target='_parent'>" . $row['Name'] . "</a></td>";
   echo "<td>" . $row['Date'] . "</td>";
   echo "<td>" . $row['Location'] . "</td>";
   echo "</tr>";
