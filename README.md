@@ -22,7 +22,9 @@ It also has the capability to make graphs for other universes (fictional or othe
     ~~- [ ] event_list.php~~
   - [ ] Natural
     ~~- [ ] Format current data properly~~ 
+
     - [ ] Date system
     - [ ] Place system
     - [ ] settings.php
+    
     ~~- [ ] event_list.php~~ 
