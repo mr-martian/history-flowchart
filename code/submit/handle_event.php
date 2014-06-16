@@ -10,7 +10,7 @@
   if(!ctype_alnum(str_replace(' ', '', $_POST['name'])) or strlen($_POST['name']) > 30) { 
     echo 'The name you entered is invalid, please only use letters, numbers, and spaces.'; 
   }
-  elseif(! mysqli_fetch_array(mysqli_query($con,"SELECT * FROM Events WHERE Name = " . sqlite_escape_string($_POST['name']) . " and Universe = " . $_POST['universe']))){
+  elseif(mysqli_fetch_array(mysqli_query($con,"SELECT * FROM Events WHERE Name = " . sqlite_escape_string($_POST['name']) . " and Universe = " . $_POST['universe']))){
     echo 'Sorry, that name is already taken. Please try something slightly more descriptive.';
   }
   elseif(! is_valid_date($_POST['date'])) {
