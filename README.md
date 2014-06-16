@@ -10,5 +10,5 @@ It also has the capability to make graphs for other universes (fictional or othe
     - [ ] advanced settings
     - [ ] make get_date more general (only handles human history)
     - [ ] finish get_graph.php
-  - [ ] essays
-    - [ ] handle_effect_essay.php
+  - [x] essays
+    - [x] handle_effect_essay.php
