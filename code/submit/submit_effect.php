@@ -18,8 +18,8 @@
       <br>
       <p>Please ensure that you have read the <a href="formatting.html">formatting instructions</a> before proceeding.</p>
       <br>
-      <textarea rows="100" cols="80" required>Please herein describe the details of how From caused To.</textarea>
-      <textarea rows="15" cols="80" required>Sources go here! MLA please, we recommend easybib.com if you don't know how to do that.</textarea>
+      <textarea rows="100" cols="80" required name="essay">Please herein describe the details of how From caused To.</textarea>
+      <textarea rows="15" cols="80" required name="sources">Sources go here! MLA please, we recommend easybib.com if you don't know how to do that.</textarea>
       <input type="submit"></input>
   </body>
 </html>
