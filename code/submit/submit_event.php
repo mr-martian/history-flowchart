@@ -1,6 +1,6 @@
 <html>
   <body>
-    <form action="handle_event.php" method="post">
+    <form action="handle_event.php" method="post" target="_blank">
       <?php
         include "universe_list.php";
         echo "<select required name='universe'>";
