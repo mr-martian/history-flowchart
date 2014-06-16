@@ -1,5 +1,5 @@
 <?php
-  include "settings/" . $_GET['universe'] . ".php";
+  include "settings/" . $_POST['universe'] . ".php";
   
   $con=mysqli_connect("example.com","peter","abc123","my_db");
   // Check connection
