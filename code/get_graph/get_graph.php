@@ -22,6 +22,7 @@
         return $rs0 . $rs1 . $s4 . $event['Name'] . $s5;
       }
       function get_event($name) {
+        global $con;
         return mysqli_fetch_array(mysqli_query($con,"SELECT * FROM Events WHERE Universe = '" . $_GET['u'] . "' and Name = '" . $name . "'"));
       }
       function ef2svg($effect) {
@@ -37,6 +38,7 @@
         return $s0 . $s1 . $s2 . $s3 . $s4 . $s5 . $s6 . '</title></line>';
       }
       function get_vfs() {
+        global $con;
         if($_GET['e'] == '*') {
           return array(mysqli_fetch_all(mysqli_query($con,"SELECT * FROM Events WHERE Universe = '". $_GET['u'] . "'")),
                        mysqli_fetch_all(mysqli_query($con,"SELECT * FROM Effects WHERE Universe = '". $_GET['u'] . "'")));
