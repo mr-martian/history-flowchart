@@ -31,7 +31,7 @@
       fwrite($file, "<html><body><a href='mailto:flowcharthistory@googlegroups.com?Subject=" . $_POST['name'] . "'>Report this essay</a>");
       fwrite($file, "<br><h1>" . $_POST['name'] . "</h1><br><p>Universe: " . $_POST['universe'] . "</p><p>Level: " . $_POST['level'] . "</p>");
       fwrite($file, "<p>Date: " . $_POST['date'] . "</p><p>Location: " . $_POST['location'] . "</p><pre>" . htmlspecialchars($_POST['essay']) . "</pre>");
-      fwrite($file, "<p><b>Sources</b></p><pre>" . htmlspecialchars($_POST['sources]) . "</pre></body></html>");
+      fwrite($file, "<p><b>Sources</b></p><pre>" . htmlspecialchars($_POST['sources']) . "</pre></body></html>");
       echo "<h1>Record Added Successfully!</h1><br><p>Please close this window.</p>";
     }
   }
