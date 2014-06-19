@@ -6,7 +6,7 @@ This folder contains all data regarding events in the various histories.
    - Todo list
  - Each UF also contains a settings.php file, which specifies:
    - Date arithmetic
-   - Propper conversion to 1-D space coordinates
+   - Propper conversion to 1-D the final frontier coordinates
    - Functions included:
      - get_time_coord(event, length) given the length of the graph and the event, calculates x-coordinate
      - get_space_coord(event, height) given the height of the graph and the event, calculates y-coordinate
@@ -23,7 +23,7 @@ This folder contains all data regarding events in the various histories.
      - location: geographic coordinates, consult relevant UFD for details
      - PartOf: higher level events are composed of lower level events, e.g. PartOf for PearlHarbor would be WorldWar2
      - description: 2-3 sentence summary of the event (note: may be removed)
-     - keywords: battle, election, etc.
+     - keywords: battle, eating contest, etc.
    - Effects: array(from, to, type, description, keywords)
      - from: cause (use the name used in the file)
      - to: event caused/affected by from
