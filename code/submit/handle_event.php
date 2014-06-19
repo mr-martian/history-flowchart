@@ -1,13 +1,10 @@
 <?php
+  include "settings/general.php";
   include "settings/" . $_POST['universe'] . ".php";
   
-  $con=mysqli_connect("example.com","peter","abc123","my_db");
-  // Check connection
-  if (mysqli_connect_errno()) {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
+  $con=connect();
   
-  if(!ctype_alnum(str_replace(' ', '', $_POST['name'])) or strlen($_POST['name']) > 30) { 
+  if(!is_valid_name($_POST['name'])) { 
     echo 'The name you entered is invalid, please only use letters, numbers, and spaces.'; 
   }
   elseif(mysqli_fetch_array(mysqli_query($con,"SELECT * FROM Events WHERE Name = " . sqlite_escape_string($_POST['name']) . " and Universe = " . $_POST['universe']))){
