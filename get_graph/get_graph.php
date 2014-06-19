@@ -1,7 +1,7 @@
 <html>
   <body>
     <?php
-      include 'universe_list.php';
+      include 'settings/general.php';
       include 'settings/' . $_GET['universe'] . '.php';
       
       $con=mysqli_connect("example.com","peter","abc123","my_db");
