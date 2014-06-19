@@ -1,5 +1,5 @@
 <?php
-  include "universe_list.php";
+  include "settings/general.php";
   $u = 0;
   foreach ($UNIVERSES as $ul){
     if ($ul[0] == $_GET['u']){
