@@ -1,9 +1,6 @@
 <?php
-  $con=mysqli_connect("example.com","peter","abc123","my_db");
-  // Check connection
-  if (mysqli_connect_errno()) {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
+  include "settings/general.php";
+  $con=connect();
 
   $result = mysqli_query($con,"SELECT * FROM Events WHERE Universe='" . $_GET['u'] . "' and Level='" . $_GET['level'] . "'");
 
