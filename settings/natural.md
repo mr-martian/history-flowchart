@@ -5,7 +5,7 @@ Add to the files as you wish, sorted by billions of years (further subdivision p
 [date system explanation here]
 
 #Place
-[specification for describing 1D or 2D location in space]
+[specification for describing 1D or 2D location in the final frontier]
 
 #Todo
 - [ ] settings.lisp
