@@ -1,7 +1,7 @@
 <html>
   <body>
     <?php
-      include "universe_list.php";
+      include "settings/general.php";
       foreach($UNIVERSES as $u){
         echo "<a href='show_levels.php?u=", $u[0], "' target='lframe'>", $u[0], ": ", $u[1], "</a><br>";
       };
