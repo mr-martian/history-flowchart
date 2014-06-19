@@ -1,16 +1,13 @@
 <?php
+  include "settings/general.php";
   include "settings/" . $_POST['universe'] . ".php";
   
-  $con=mysqli_connect("example.com","peter","abc123","my_db");
-  // Check connection
-  if (mysqli_connect_errno()) {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
+  $con=connect();
   
-  if(!ctype_alnum(str_replace(' ', '', $_POST['from'])) or strlen($_POST['from']) > 30) { 
+  if(!is_valid_name($_POST['from'])) { 
     echo "The 'From' you entered is invalid, please only use letters, numbers, and spaces."; 
   }
-  elseif(!ctype_alnum(str_replace(' ', '', $_POST['to'])) or strlen($_POST['to']) > 30) { 
+  elseif(!is_valid_name($_POST['to'])) { 
     echo "The 'To' you entered is invalid, please only use letters, numbers, and spaces."; 
   }
   elseif(!ctype_alnum(str_replace(' ', '', $_POST['type'])) or strlen($_POST['type']) > 15) { 
