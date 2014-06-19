@@ -5,10 +5,5 @@ This program is intended to create flowcharts of history in the hope that this m
 It also has the capability to make graphs for other universes (fictional or otherwise).
 
 #TODO
-- [ ] CODE
-  - [ ] graphs
-    - [ ] advanced settings
-    - [ ] make get_date more general (only handles human history)
-    - [ ] finish get_graph.php
-  - [x] essays
-    - [x] handle_effect_essay.php
+- [ ] make it look nice
+- [ ] advanced settings
