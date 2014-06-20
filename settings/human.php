@@ -1,10 +1,11 @@
 <?php
-  function is_valid_date($string) { //NOT SURE IF THIS WILL DO...
-    $a = date_parse_from_format("m/j/Y", $string);
-    return checkdate($a['month'], $a['day'], $a['year']);
+  function is_valid_date($string) {
+    $s = sscanf($string, "%d");
+    return $string == sprintf("%d", $s[0]);
   }
   function is_valid_place($string) {
-    4; //FINISH
+    $s = sscanf($string, "(%d, %d)");
+    return $string == sprintf("(%d, %d)", $s[0], $s[1]);
   }
   function get_effect_color($effect) {
     return 'green';
@@ -13,10 +14,9 @@
     return 'red';
   }
   function get_space_coord($event) {
-    $s = explode(' ', str_replace(')', ' ', $event['Location']))[1];
-    return parse_str($s);
+    return sscanf($event['location'], "(%d, %d)")[1];
   }
   function get_time_coord($event) {
-    return 5; //FINISH
+    return sscanf($event['date'], "%d")[0];
   }
 ?>
