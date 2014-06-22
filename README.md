@@ -8,3 +8,5 @@ It also has the capability to make graphs for other universes (fictional or othe
 - [ ] finish `formatting.html`
 - [ ] make it look nice
 - [ ] advanced settings
+- [ ] `settings/natural.php`
+- [ ] effect type system/checking
