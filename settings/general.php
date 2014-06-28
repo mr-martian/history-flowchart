@@ -7,7 +7,7 @@
     return ctype_alnum(str_replace(' ', '', $name)) and strlen($name) < 30;
   }
   function connect() {
-    $con=mysqli_connect("localhost","peter","abc123","flowchart_data"); //change password, username later
+    $con=mysqli_connect("localhost", "root", "", "flowchart_data"); //change password, username later
     // Check connection
     if (mysqli_connect_errno()) {
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
