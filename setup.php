@@ -1,5 +1,5 @@
 <?php
-  $con=mysqli_connect("flowcharthistory.com", "user", "password");
+  $con=mysqli_connect("localhost", "root", ""); //set user, password when launching
   // Check connection
   if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
