@@ -10,7 +10,7 @@
   elseif(!is_valid_name($_POST['to'])) { 
     echo "The 'To' you entered is invalid, please only use letters, numbers, and spaces."; 
   }
-  elseif(!ctype_alnum(str_replace(' ', '', $_POST['type'])) or strlen($_POST['type']) > 15) { 
+  elseif(!is_valid_type($_POST['type'])) { 
     echo "The 'Type' you entered is invalid, please only use letters, numbers, and spaces."; 
   }
   elseif(mysqli_fetch_array(mysqli_query($con,"SELECT * FROM Effects WHERE From = " . sqlite_escape_string($_POST['from']) . " and To = " . sqlite_escape_string($_POST['to']) . " and Universe = " . $_POST['universe']))){
