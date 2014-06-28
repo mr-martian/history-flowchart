@@ -9,4 +9,7 @@ It also has the capability to make graphs for other universes (fictional or othe
 - [ ] make it look nice
 - [ ] advanced settings
 - [ ] `settings/natural.php`
+  - [ ] type list
+  - [ ] place list
+- [ ] `settings/human.php` type list
 - [x] effect type system/checking
