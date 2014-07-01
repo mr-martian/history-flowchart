@@ -1,14 +1,16 @@
 <?php
   include "settings/general.php";
-  $con=connect(false);
+  $create=connect(false);
 
   // Create database
   $sql="CREATE DATABASE flowchart_data";
-  if (mysqli_query($con,$sql)) {
+  if (mysqli_query($create,$sql)) {
     echo "Database flowchart_data created successfully";
   } else {
     echo "Error creating database: " . mysqli_error($con);
   }
+  
+  $con=connect();
   
   // Create table
   $sql="CREATE TABLE Events(PID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(PID), Name CHAR(30), Universe CHAR(10), Level SMALLINT, Date CHAR(15), Location CHAR(15))";
