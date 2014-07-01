@@ -22,8 +22,8 @@
         return mysqli_fetch_array(mysqli_query($con,"SELECT * FROM Events WHERE Universe = '" . $_GET['u'] . "' and Name = '" . $name . "'"));
       }
       function ef2svg($effect) {
-        $f = get_event($effect['From']);
-        $t = get_event($effect['To']);
+        $f = get_event($effect['Cause']);
+        $t = get_event($effect['Effect']);
         $s0 = '<line x1="' . get_time_coord($f);
         $s1 = '" y1="' . get_space_coord($f);
         $s2 = '" x2="' . get_time_coord($t);
@@ -42,9 +42,9 @@
         elseif(ctype_alnum(str_replace(' ', '', $_GET['e'])) and strlen($_GET['e']) <= 30) {
           $v = array(get_event($_GET['e']));
           $f = array();
-          $af = mysqli_fetch_all(mysqli_query($con, "SELECT * FROM Effects WHERE Universe = '" . $_GET['u'] . "' and From = '" . $_GET['e'] . "'"));
+          $af = mysqli_fetch_all(mysqli_query($con, "SELECT * FROM Effects WHERE Universe = '" . $_GET['u'] . "' and Cause = '" . $_GET['e'] . "'"));
           $av = array();
-          $bf = mysqli_fetch_all(mysqli_query($con, "SELECT * FROM Effects WHERE Universe = '" . $_GET['u'] . "' and To = '" . $_GET['e'] . "'"));
+          $bf = mysqli_fetch_all(mysqli_query($con, "SELECT * FROM Effects WHERE Universe = '" . $_GET['u'] . "' and Effect = '" . $_GET['e'] . "'"));
           $bv = array();
           while ($av or $af) {
             foreach ($af as $a) {
@@ -53,7 +53,7 @@
             array_merge($f, $af);
             $af = array();
             foreach ($av as $a) {
-              array_merge($af, mysqli_fetch_all(mysqli_query($con, "SELECT * FROM Effects WHERE Universe = '" . $_GET['u'] . "' and From = '" . $a['Name'] . "'")));
+              array_merge($af, mysqli_fetch_all(mysqli_query($con, "SELECT * FROM Effects WHERE Universe = '" . $_GET['u'] . "' and Cause = '" . $a['Name'] . "'")));
             }
             array_merge($v, $av);
             $av = array();
@@ -65,7 +65,7 @@
             array_merge($f, $bf);
             $af = array();
             foreach ($bv as $b) {
-              array_merge($bf, mysqli_fetch_all(mysqli_query($con, "SELECT * FROM Effects WHERE Universe = '" . $_GET['u'] . "' and To = '" . $b['Name'] . "'")));
+              array_merge($bf, mysqli_fetch_all(mysqli_query($con, "SELECT * FROM Effects WHERE Universe = '" . $_GET['u'] . "' and Effect = '" . $b['Name'] . "'")));
             }
             array_merge($v, $bv);
             $av = array();
