@@ -10,9 +10,9 @@
         echo "</select>";
       ?>
       <br>
-      <input type="text" required maxlength="30" name="from">  From</input>
+      <input type="text" required maxlength="30" name="from">  Cause</input>
       <br>
-      <input type="text" required maxlength="30" name="to">  To</input>
+      <input type="text" required maxlength="30" name="to">  Effect</input>
       <br>
       <input type="text" required maxlength="15" name="type"> Type</input>
       <br>
