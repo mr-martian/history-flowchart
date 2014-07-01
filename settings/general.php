@@ -6,8 +6,13 @@
   function is_valid_name($name) {
     return ctype_alnum(str_replace(' ', '', $name)) and strlen($name) < 30;
   }
-  function connect() {
-    $con=mysqli_connect("localhost", "root", "", "flowchart_data"); //change password, username later
+  function connect($usedb = true) {
+    if ($usedb) {
+      $con=mysqli_connect("localhost", "root", "", "flowchart_data"); //change password, username later
+    }
+    else {
+      $con=mysqli_connect("localhost", "root", "");
+    }
     // Check connection
     if (mysqli_connect_errno()) {
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
