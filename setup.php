@@ -17,18 +17,18 @@
 
   // Execute query
   if (mysqli_query($con,$sql)) {
-    echo "Table Events created successfully";
+    echo "\nTable Events created successfully";
   } else {
-    echo "Error creating table: " . mysqli_error($con);
+    echo "\nError creating table: " . mysqli_error($con);
   }
     
   // Create table
-  $sql="CREATE TABLE Effects(PID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(PID), Universe CHAR(10), From CHAR(30), To CHAR(30), Type CHAR(15));";
+  $sql="CREATE TABLE Effects(PID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(PID), Universe CHAR(10), Cause CHAR(30), Effect CHAR(30), Type CHAR(15));";
 
   // Execute query
   if (mysqli_query($con,$sql)) {
-    echo "Table Effects created successfully";
+    echo "\nTable Effects created successfully";
   } else {
-    echo "Error creating table: " . mysqli_error($con);
+    echo "\nError creating table: " . mysqli_error($con);
   }
 ?>
