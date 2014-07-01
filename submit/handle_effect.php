@@ -5,15 +5,15 @@
   $con=connect();
   
   if(!is_valid_name($_POST['from'])) { 
-    echo "The 'From' you entered is invalid, please only use letters, numbers, and spaces."; 
+    echo "The 'Cause' you entered is invalid, please only use letters, numbers, and spaces."; 
   }
   elseif(!is_valid_name($_POST['to'])) { 
-    echo "The 'To' you entered is invalid, please only use letters, numbers, and spaces."; 
+    echo "The 'Effect' you entered is invalid, please only use letters, numbers, and spaces."; 
   }
   elseif(!is_valid_type($_POST['type'])) { 
     echo "The 'Type' you entered is invalid, please only use letters, numbers, and spaces."; 
   }
-  elseif(mysqli_fetch_array(mysqli_query($con,"SELECT * FROM Effects WHERE From = " . sqlite_escape_string($_POST['from']) . " and To = " . sqlite_escape_string($_POST['to']) . " and Universe = " . $_POST['universe']))){
+  elseif(mysqli_fetch_array(mysqli_query($con,"SELECT * FROM Effects WHERE Cause = " . sqlite_escape_string($_POST['from']) . " and Effect = " . sqlite_escape_string($_POST['to']) . " and Universe = " . $_POST['universe']))){
     echo 'Sorry, that cause & effect chain has already been entered. Please add something new.';
   }
   else {
