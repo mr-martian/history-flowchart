@@ -4,6 +4,7 @@
 
   $result = mysqli_query($con,"SELECT * FROM Events WHERE Universe='" . $_GET['u'] . "' and Level='" . $_GET['level'] . "'");
 echo "<a href='get_graph.php?u=" . $_GET['u'] . "&lv=" . $_GET['level'] . "&e=*'>Show everything</a>";
+echo "<p>Control-f is recommended for finding things on this list.</p>";
 echo "<table>
 <tr>
 <th>Name</th>
