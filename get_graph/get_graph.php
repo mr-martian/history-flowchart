@@ -4,11 +4,7 @@
       include 'settings/general.php';
       include 'settings/' . $_GET['universe'] . '.php';
       
-      $con=mysqli_connect("example.com","peter","abc123","my_db");
-      // Check connection
-      if (mysqli_connect_errno()) {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-      }
+      $con=connect();
 
       function ev2svg($event) {
         $s0 = '<circle r="5" stroke="black" stroke-width="1" cx="';
