@@ -1,9 +1,6 @@
 <?php
-  $con=mysqli_connect("localhost", "root", ""); //set user, password when launching
-  // Check connection
-  if (mysqli_connect_errno()) {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
+  include "settings/general.php";
+  $con=connect(false);
 
   // Create database
   $sql="CREATE DATABASE flowchart_data";
