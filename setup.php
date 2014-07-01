@@ -13,7 +13,7 @@
   $con=connect();
   
   // Create table
-  $sql="CREATE TABLE Events(PID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(PID), Name CHAR(30), Universe CHAR(10), Level SMALLINT, Date CHAR(15), Location CHAR(15))";
+  $sql="CREATE TABLE Events(PID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(PID), Name CHAR(30), Universe CHAR(10), Level SMALLINT, Date CHAR(15), Location CHAR(15));";
 
   // Execute query
   if (mysqli_query($con,$sql)) {
@@ -23,7 +23,7 @@
   }
     
   // Create table
-  $sql="CREATE TABLE Effects(PID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(PID), Universe CHAR(10), From CHAR(30), To CHAR(30), Type CHAR(15))";
+  $sql="CREATE TABLE Effects(PID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(PID), Universe CHAR(10), From CHAR(30), To CHAR(30), Type CHAR(15));";
 
   // Execute query
   if (mysqli_query($con,$sql)) {
