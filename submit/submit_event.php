@@ -2,10 +2,10 @@
   <body>
     <form action="handle_event.php" method="post" target="_blank">
       <?php
-        include "universe_list.php";
+        include "settings/general.php";
         echo "<select required name='universe'>";
-        foreach ($UNIVERSES as $u){
-          echo "<option value='", $u[0], "'>", $u[0], "</option>";
+        foreach (array_keys($UNIVERSES) as $u){
+          echo "<option value='", $u, "'>", $u, "</option>";
         };
         echo "</select>";
       ?>
