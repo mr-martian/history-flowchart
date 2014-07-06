@@ -12,8 +12,6 @@
       <br>
       <input type="text" required maxlength="30" name="name">  Name</input>
       <br>
-      <input type="number" required name="level">  Level</input>
-      <br>
       <input type="text" required maxlength="15" name="date">  Date</input>
       <input type="text" required maxlength="15" name="location">  Location</input>
       <br>
