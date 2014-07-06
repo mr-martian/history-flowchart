@@ -2,8 +2,8 @@
   include "settings/general.php";
   $con=connect();
 
-  $result = mysqli_query($con,"SELECT * FROM Events WHERE Universe='" . $_GET['u'] . "' and Level='" . $_GET['level'] . "'");
-echo "<a href='get_graph.php?u=" . $_GET['u'] . "&lv=" . $_GET['level'] . "&e=*'>Show everything</a>";
+  $result = mysqli_query($con,"SELECT * FROM Events WHERE Universe='" . $_GET['u'] . "'");
+echo "<a href='get_graph.php?u=" . $_GET['u'] . "&e=*'>Show everything</a>";
 echo "<p>Control-f is recommended for finding things on this list.</p>";
 echo "<table>
 <tr>
@@ -12,7 +12,7 @@ echo "<table>
 <th>Location</th>
 </tr>";
 
-$str = "<td><a href='get_graph.php?u=" . $_GET['u'] . "&lv=" . $_GET['level'] . "&e=";
+$str = "<td><a href='get_graph.php?u=" . $_GET['u'] . "&e=";
 
 while($row = mysqli_fetch_array($result)) {
   echo "<tr>";
