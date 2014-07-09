@@ -4,7 +4,7 @@
     "Natural" => "History of the universe prior to the advent of human civilization"
   );
   function get_universe($name) {
-    if array_key_exists($name, $UNIVERSES) {
+    if (array_key_exists($name, $UNIVERSES)) {
       include "settings/".$name.".php";
     }
   }
