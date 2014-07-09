@@ -2,7 +2,7 @@
   <body>
     <?php
       include 'settings/general.php';
-      include 'settings/' . $_GET['universe'] . '.php';
+      get_universe($_GET['universe']);
       
       $con=connect();
 
