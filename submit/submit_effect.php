@@ -7,7 +7,7 @@
         foreach (array_keys($UNIVERSES) as $u){
           echo "<option value='", $u, "'>", $u, "</option>";
         };
-        echo "<option value='Multi'>Multi</option>";
+        //echo "<option value='Multi'>Multi</option>";
         echo "</select>";
       ?>
       <br>
