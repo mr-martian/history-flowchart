@@ -14,7 +14,7 @@
         $s4 = '\')" marker-end="url(#triangle)"><title>';
         $s5 = '</title></circle>';
         $rs0 = $s0 . get_time_coord($event) . $s1 . get_space_coord($event) . $s2;
-        $rs1 = get_event_color($event) . $s3 . 'essays/events/' . $event['PID'] . '.html';
+        $rs1 = get_event_color($event) . $s3 . 'get_essay/get_event_essay.php?' . $event['PID'];
         return $rs0 . $rs1 . $s4 . $event['Name'] . $s5;
       }
       function get_event($name) {
@@ -29,7 +29,7 @@
         $s2 = '" x2="' . get_time_coord($t);
         $s3 = '" y2="' . get_space_coord($t);
         $s4 = '" color="' . get_effect_color($effect);
-        $s5 = '" onclick="window.open(\'' . 'essays/effects/' . $effect['PID'] . '.html';
+        $s5 = '" onclick="window.open(\'' . 'get_essay/get_effect_essay.php?' . $effect['PID'];
         $s6 = '\')"><title>' . $f['Name'] . ' to ' . $t['Name'];
         return $s0 . $s1 . $s2 . $s3 . $s4 . $s5 . $s6 . '</title></line>';
       }
