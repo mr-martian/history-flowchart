@@ -1,6 +1,6 @@
 <?php
   include "settings/general.php";
-  include "settings/" . $_POST['universe'] . ".php";
+  get_universe($_POST['universe']);
   
   $con=connect();
   
