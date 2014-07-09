@@ -8,6 +8,6 @@
 while($row = mysqli_fetch_array($result)) {
   echo "<br><a href='display_effect_essay.php?id=", $row['PID'], "'>", $row['Title'], "</a>";
 }
-echo "<br>";
+echo "<hr>";
 echo "<a href='submit/submit_effect_essay?id=", $_GET['id'], "'>Submit your own</a>";
 ?>
