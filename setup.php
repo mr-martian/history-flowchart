@@ -23,11 +23,31 @@
   }
     
   // Create table
+  $sql="CREATE TABLE Vessays(PID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(PID), Title CHAR(50), About INT(10));"; //add author, etc.?
+
+  // Execute query
+  if (mysqli_query($con,$sql)) {
+    echo "\nTable Vessays created successfully";
+  } else {
+    echo "\nError creating table: " . mysqli_error($con);
+  }
+  
+  // Create table
   $sql="CREATE TABLE Effects(PID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(PID), Universe CHAR(10), Cause CHAR(30), Effect CHAR(30), Type CHAR(15));";
 
   // Execute query
   if (mysqli_query($con,$sql)) {
     echo "\nTable Effects created successfully";
+  } else {
+    echo "\nError creating table: " . mysqli_error($con);
+  }
+  
+  // Create table
+  $sql="CREATE TABLE Fessays(PID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(PID), Title CHAR(50), About INT(10));";
+
+  // Execute query
+  if (mysqli_query($con,$sql)) {
+    echo "\nTable Fessays created successfully";
   } else {
     echo "\nError creating table: " . mysqli_error($con);
   }
