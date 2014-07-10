@@ -13,4 +13,4 @@ It also has the capability to make graphs for other universes (fictional or othe
   - [ ] place list
 - [ ] `settings/human.php` type list
 - [x] effect type system/checking
-- [ ] `get_essay`
+- [x] `get_essay`
