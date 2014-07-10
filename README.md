@@ -6,6 +6,9 @@ It also has the capability to make graphs for other universes (fictional or othe
 
 #TODO
 - [ ] finish `formatting.html`
+  - [ ] Human type list
+  - [ ] Natural place list
+  - [ ] Natural type list
 - [ ] make it look nice
 - [ ] advanced settings
 - [ ] `settings/natural.php`
