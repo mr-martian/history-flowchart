@@ -1,27 +1,42 @@
 <html>
+  <head>
+    <script>
+      function collapse(name) {
+        document.getElementById(name).style.display=(document.getElementById(name).style.display=='block')?'none':'block';
+      }
+    </script>
+  </head>
   <body>
     <h1>Formatting Instructions</h1>
-    <h3>Name</h3>
-    <p>30 or fewer characters. Numbers, letters, and spaces only.</p>
-    <h2>Human</h2>
-    <h3>Place</h3>
-    <b>(latitude, longitude)</b>
-    <p>Enter both as decimals, degrees north of the equator and east of Grenich.</p>
-    <h3>Date</h3>
-    <b>year</b>
-    <p>Enter as a decimal (e.g. 7/1/2014 => 2014.5), use negative numbers for BC.</p>
-    <p>Click <a href="http://www.wolframalpha.com/widgets/view.jsp?id=9920857cc88285c0a1609330d0167a1d">here</a> for a widget to simplify the process.</p>
-    <p>And click <a href="http://www.wolframalpha.com/widgets/view.jsp?id=2b75b78887461d57cdb24bad918be50">here</a> for BC.</p>
-    <h3>Type</h3>
-    <p>UNFINISHED</p>
+    <h2><a href="#" onclick="collapse('general')">General</a></h2>
+    <div id="general" style="display: none;">
+      <h3>Name</h3>
+      <p>30 or fewer characters. Numbers, letters, and spaces only.</p>
+    </div>
     <hr>
-    <h2>Natural</h2>
-    <h3>Place</h3>
-    <p>UNFINISHED</p>
-    <h3>Date</h3>
-    <b>year</b>
-    <p>In millions of years after the Big Bang.</p>
-    <h3>Type</h3>
-    <p>UNFINISHED</p>
+    <h2><a href="#" onclick="collapse('human')">Human</a></h2>
+    <div id="human" style="display: none;">
+      <h3>Place</h3>
+      <b>(latitude, longitude)</b>
+      <p>Enter both as decimals, degrees north of the equator and east of Grenich.</p>
+      <h3>Date</h3>
+      <b>year</b>
+      <p>Enter as a decimal (e.g. 7/1/2014 =&gt; 2014.5), use negative numbers for BC.</p>
+      <p>Click <a href="http://www.wolframalpha.com/widgets/view.jsp?id=9920857cc88285c0a1609330d0167a1d">here</a> for a widget to simplify the process.</p>
+      <p>And click <a href="http://www.wolframalpha.com/widgets/view.jsp?id=2b75b78887461d57cdb24bad918be50">here</a> for BC.</p>
+      <h3>Type</h3>
+      <p>UNFINISHED</p>
+    </div>
+    <hr>
+    <h2><a href="#" onclick="collapse('natural')">Natural</a></h2>
+    <div id="natural" style="display: none;">
+      <h3>Place</h3>
+      <p>UNFINISHED</p>
+      <h3>Date</h3>
+      <b>year</b>
+      <p>In millions of years after the Big Bang.</p>
+      <h3>Type</h3>
+      <p>UNFINISHED</p>
+    </div>
   </body>
 </html>
