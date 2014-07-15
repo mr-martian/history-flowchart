@@ -16,7 +16,7 @@
       }
       
       echo "<h1>", $title, "</h1>";
-      echo "<form action='handle_essay.php?id=", $_GET['id'], "&type=", $_GET['type'], ' method='POST'>";
+      echo "<form action='handle_essay.php?id=", $_GET['id'], "&type=", $_GET['type'], " method='POST'>";
       echo "<input type='text' maxlength='50' name='title'>Title</input>"
       echo "<textarea rows='100' cols='80' required name='essay'>Please herein describe ", $essay, "</textarea>";
       echo "<textarea rows='15' cols='80' required name='sources'>Sources go here!</textarea>";
