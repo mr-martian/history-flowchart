@@ -1,6 +1,6 @@
 <html>
   <body>
-    <form action="handle_effect.php" method="post" target="_blank">
+    <form action="handle_effect.php" method="post" target="result">
       <?php
         include "settings/general.php";
         echo "<select required name='universe'>";
@@ -17,7 +17,7 @@
       <br>
       <input type="text" required maxlength="15" name="type"> Type</input>
       <br>
-      <p>Please ensure that you have read the <a href="formatting.html">formatting instructions</a> before proceeding.</p>
+      <p>Please ensure that you have read the <a href="formatting.html" target='result'>formatting instructions</a> before proceeding.</p>
       <br>
       <input type="submit"></input>
   </body>
