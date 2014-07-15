@@ -20,6 +20,6 @@
     $str = $_POST['name'] . "', '" . $_POST['universe'] . "', '" . $_POST['date'] . "', '" . $_POST['location'] . ")"
     mysqli_query($con,"INSERT INTO Events (Name, Universe, Date, Location) VALUES ('" . $str);
     $int = mysqli_fetch_array(mysqli_query("SELECT * FROM Events WHERE Universe = " . $_POST['universe'] . " and Name = " . $_POST['name']))[0]['PID'];
-    echo "<h1>Record Added Successfully!</h1><br><p>Click <a href='submit_event_essay.php?id=" . $int . "'>here</a> to add an extended description.</p>";
+    echo "<h1>Record Added Successfully!</h1><br><p>Click <a href='submit_essay.php?type=v&id=" . $int . "' target='submit'>here</a> to add an extended description.</p>";
   }
 ?>
