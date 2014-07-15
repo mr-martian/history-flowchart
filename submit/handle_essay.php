@@ -9,7 +9,7 @@
       $file = fopen("essays/" . ($_GET['type'] == 'v' ? 'events' : 'effects') . "/" . $int . ".txt", "x");
       if ($file) {
         fwrite($file, htmlspecialchars($_POST['essay']) . "\n\n");
-        fwrite($file, "<h3>SOURCES</h3>" . htmlspecialchars($_POST['sources']));
+        fwrite($file, "<h3>SOURCES</h3>\n" . htmlspecialchars($_POST['sources']));
         echo "record succesfully added.";
       }
     ?>
