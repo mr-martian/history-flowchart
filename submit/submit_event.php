@@ -15,7 +15,7 @@
       <input type="text" required maxlength="15" name="date">  Date</input>
       <input type="text" required maxlength="15" name="location">  Location</input>
       <br>
-      <p>Please ensure that you have read the <a href="formatting.html">formatting instructions</a> before proceeding.</p>
+      <p>Please ensure that you have read the <a href="formatting.html" target='result'>formatting instructions</a> before proceeding.</p>
       <input type="submit"></input>
   </body>
 </html>
