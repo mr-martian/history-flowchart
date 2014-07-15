@@ -38,4 +38,12 @@
     echo "<tr><th>Universe</th><td colspan=\"2\">", $ef['Universe'], "</td></tr>";
     echo "<tr><th>Type</th></td colspan=\"2\">", $ef['Type'], "</td></tr></table>";
   }
+  function event_summary($id) {
+    $con = connect();
+    $ev = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM Events WHERE PID = " . $id));
+    echo "<table><tr><th>Name</th><td>", $ev['Name'], "</td></tr>";
+    echo "<tr><th>Date</th><td>", $ev['Date'], "</td></tr>";
+    echo "<tr><th>Location</th><td>", $ev['Location'], "</td></tr>";
+    echo "<tr><th>Universe</th><td>", $ev['Universe'], "</td></tr></table>";
+  }
 ?>
