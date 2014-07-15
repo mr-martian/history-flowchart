@@ -17,3 +17,5 @@ It also has the capability to make graphs for other universes (fictional or othe
 - [ ] `settings/human.php` type list
 - [x] effect type system/checking
 - [x] `get_essay`
+- [ ] access to `submit_essay.php` from home page
+- [ ] finish home page
