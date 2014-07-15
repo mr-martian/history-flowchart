@@ -26,4 +26,16 @@
       return $con;
     }
   }
+  function effect_summary($id) {
+    $con = connect();
+    $ef = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM Effects WHERE PID = " . $id));
+    $f = mysqli_fetch_array(mysqli_query($con, "SELECT * FROM Events WHERE Name = '" . $ef['Cause']));
+    $t = mysqli_fetch_array(mysqli_query($con, "SELECT * FROM Events WHERE Name = '" . $ef['Effect']));
+    echo "<table><tr><th></th><th>Cause</th><th>Effect</th></tr>";
+    echo "<tr><th>Event</th><td>", $f['Name'], "</td><td>", $t['Name'], "</td></tr>";
+    echo "<tr><th>Date</th><td>", $f['Date'], "</td><td>", $t['Date'], "</td></tr>";
+    echo "<tr><th>Location</th><td>", $f['Location'], "</td><td>", $t['Location'], "</td></tr>";
+    echo "<tr><th>Universe</th><td colspan=\"2\">", $ef['Universe'], "</td></tr>";
+    echo "<tr><th>Type</th></td colspan=\"2\">", $ef['Type'], "</td></tr></table>";
+  }
 ?>
