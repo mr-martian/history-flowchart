@@ -26,7 +26,7 @@
       return $con;
     }
   }
-  function get_event($name=null, $universe=null, $id=null, $date=null, $location=null) {
+  function get_event($name=null, $universe=null, $id=null, $date=null, $location=null, $array=false) {
     $con = connect();
     $str = ' WHERE';
     if ($name) {
@@ -56,9 +56,9 @@
     }
     $ret = mysqli_query($con, "SELECT * FROM Events" . ($str != ' WHERE' ? $str : ''));
     mysqli_close($con);
-    return $ret;
+    return ($array ? mysqli_fetch_array($ret) : $ret);
   }
-  function get_effect($universe=null, $id=null, $cause=null, $effect=null, $type=null) {
+  function get_effect($universe=null, $id=null, $cause=null, $effect=null, $type=null, $array=false) {
     $con = connect();
     $str = ' WHERE';
     if ($universe) {
@@ -83,7 +83,7 @@
     }
     $ret = mysqli_query($con, "SELECT * FROM Effects" . ($str != ' WHERE' ? $str : ''));
     mysqli_close($con);
-    return $ret;
+    return ($array ? mysqli_fetch_array($ret) : $ret);
   }
   function effect_summary($id) {
     $con = connect();
