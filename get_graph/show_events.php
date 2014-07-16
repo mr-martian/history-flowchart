@@ -1,8 +1,6 @@
 <?php
   include "settings/general.php";
-  $con=connect();
-
-  $result = mysqli_query($con,"SELECT * FROM Events WHERE Universe='" . $_GET['u'] . "'");
+  $result = get_event($universe=$_GET['u']);
 echo "<a href='get_graph.php?u=" . $_GET['u'] . "&e=*'>Show everything</a>";
 echo "<p>Control-f is recommended for finding things on this list.</p>";
 echo "<table>
@@ -23,6 +21,4 @@ while($row = mysqli_fetch_array($result)) {
 }
 
 echo "</table>";
-
-mysqli_close($con);
 ?>
