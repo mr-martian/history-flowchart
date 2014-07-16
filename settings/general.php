@@ -26,6 +26,61 @@
       return $con;
     }
   }
+  function get_event($name=null, $universe=null, $id=null, $date=null, $location=null) {
+    $con = connect();
+    $str = ' WHERE';
+    if ($name) {
+      if (is_valid_name($name)) {
+        $str .= " Name = '" . $name . "'";
+      }
+      else {
+        return null;
+      }
+    }
+    if ($universe) {
+      if (array_key_exists($universe, $UNIVERSES)) {
+        $str .= " Universe = '" . $universe . "'";
+      }
+      else {
+        return null;
+      }
+    }
+    if ($id) {
+      $str .= ' PID = ' . strval(intval($id));
+    }
+    if ($date) {
+      $str .= " Date = '" . mysqli_real_escape_string($con, $date) . "'";
+    }
+    if ($location) {
+      $str .= " Location = '" . mysqli_real_escape_string($con, $location) . "'";
+    }
+    return mysqli_query($con, "SELECT * FROM Events" . ($str != ' WHERE' ? $str : ''));
+  }
+  function get_effect($universe=null, $id=null, $cause=null, $effect=null, $type=null) {
+    $con = connect();
+    $str = ' WHERE';
+    if ($universe) {
+      if (array_key_exists($universe, $UNIVERSES)) {
+        $str .= " Universe = '" . $universe . "'";
+      }
+      else {
+        return null;
+      }
+    }
+    if ($id) {
+      $str .= ' PID = ' . strval(intval($id));
+    }
+    if ($cause) {
+      $str .= " Cause = " . strval(intval($cause));
+    }
+    if ($effect) {
+      $str .= ' Effect = ' . strval(intval($effect));
+    }
+    if ($type) {
+      $str .= " Location = '" . mysqli_real_escape_string($con, $type) . "'";
+    }
+    return mysqli_query($con, "SELECT * FROM Effects" . ($str != ' WHERE' ? $str : ''));
+  }
   function effect_summary($id) {
     $con = connect();
     $ef = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM Effects WHERE PID = " . $id));
