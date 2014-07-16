@@ -33,7 +33,7 @@
   }
   
   // Create table
-  $sql="CREATE TABLE Effects(PID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(PID), Cause CHAR(30), Effect CHAR(30), Type CHAR(15));";
+  $sql="CREATE TABLE Effects(PID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(PID), Cause INT(10), Effect INT(10), Type CHAR(15), Universe CHAR(10));";
 
   // Execute query
   if (mysqli_query($con,$sql)) {
