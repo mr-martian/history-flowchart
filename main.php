@@ -17,7 +17,7 @@
       echo mysqli_fetch_array(mysqli_query($con, "SELECT Count(*) FROM Vessays"))[0] + mysqli_fetch_array(mysqli_query($con, "SELECT Count(*) FROM Vessays"))[0], " essays.</p>";
     ?>
     <a href='submit/submit_event.php' target='submit'>Submit an event</a>
-    <a href='submit/submit_effect.php' target='submit'>Submit a cause-and-effect chain</a>
+    <a href='submit/submit_effect_u.php' target='submit'>Submit a cause-and-effect chain</a>
     <table>
       <tr>
         <td><iframe src="about:blank" name="submit"></iframe></td>
