@@ -54,7 +54,9 @@
     if ($location) {
       $str .= " Location = '" . mysqli_real_escape_string($con, $location) . "'";
     }
-    return mysqli_query($con, "SELECT * FROM Events" . ($str != ' WHERE' ? $str : ''));
+    $ret = mysqli_query($con, "SELECT * FROM Events" . ($str != ' WHERE' ? $str : ''));
+    mysqli_close($con);
+    return $ret;
   }
   function get_effect($universe=null, $id=null, $cause=null, $effect=null, $type=null) {
     $con = connect();
@@ -79,7 +81,9 @@
     if ($type) {
       $str .= " Location = '" . mysqli_real_escape_string($con, $type) . "'";
     }
-    return mysqli_query($con, "SELECT * FROM Effects" . ($str != ' WHERE' ? $str : ''));
+    $ret = mysqli_query($con, "SELECT * FROM Effects" . ($str != ' WHERE' ? $str : ''));
+    mysqli_close($con);
+    return $ret;
   }
   function effect_summary($id) {
     $con = connect();
