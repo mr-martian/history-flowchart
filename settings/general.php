@@ -86,10 +86,9 @@
     return ($array ? mysqli_fetch_array($ret) : $ret);
   }
   function effect_summary($id) {
-    $con = connect();
-    $ef = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM Effects WHERE PID = " . $id));
-    $f = mysqli_fetch_array(mysqli_query($con, "SELECT * FROM Events WHERE Name = '" . $ef['Cause']));
-    $t = mysqli_fetch_array(mysqli_query($con, "SELECT * FROM Events WHERE Name = '" . $ef['Effect']));
+    $ef = get_effect($id=$id, $array=true);
+    $f = get_event($name=$ef['Cause'], $array=true);
+    $t = get_event($name=$ef['Effect'], $array=true);
     echo "<table><tr><th></th><th>Cause</th><th>Effect</th></tr>";
     echo "<tr><th>Event</th><td>", $f['Name'], "</td><td>", $t['Name'], "</td></tr>";
     echo "<tr><th>Date</th><td>", $f['Date'], "</td><td>", $t['Date'], "</td></tr>";
@@ -98,8 +97,7 @@
     echo "<tr><th>Type</th></td colspan=\"2\">", $ef['Type'], "</td></tr></table>";
   }
   function event_summary($id) {
-    $con = connect();
-    $ev = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM Events WHERE PID = " . $id));
+    $ev = get_event($id=$id, $array=true);
     echo "<table><tr><th>Name</th><td>", $ev['Name'], "</td></tr>";
     echo "<tr><th>Date</th><td>", $ev['Date'], "</td></tr>";
     echo "<tr><th>Location</th><td>", $ev['Location'], "</td></tr>";
