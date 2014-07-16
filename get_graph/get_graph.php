@@ -16,8 +16,8 @@
         return $rs0 . $rs1 . $s4 . $event['Name'] . $s5;
       }
       function ef2svg($effect) {
-        $f = get_event($name=$effect['Cause'], $universe=$_GET['u']);
-        $t = get_event($name=$effect['Effect'], $universe=$_GET['u']);
+        $f = get_event($id=$effect['Cause'], $universe=$_GET['u']);
+        $t = get_event($id=$effect['Effect'], $universe=$_GET['u']);
         $s0 = '<line x1="' . get_time_coord($f);
         $s1 = '" y1="' . get_space_coord($f);
         $s2 = '" x2="' . get_time_coord($t);
@@ -33,33 +33,33 @@
           return array(mysqli_fetch_all(get_event($universe=$_GET['u'])),
                        mysqli_fetch_all(get_effect($universe=$_GET['u'])));
         }
-        elseif(is_valid_name($_GET['e'])) {
-          $v = array(get_event($name=$_GET['e'], $universe=$_GET['u'], $array=true));
+        else {
+          $v = array(get_event($id=intval($_GET['e']), $universe=$_GET['u'], $array=true));
           $f = array();
-          $af = mysqli_fetch_all(get_effect($universe=$_GET['u'], $cause=$_GET['e']));
+          $af = mysqli_fetch_all(get_effect($universe=$_GET['u'], $cause=intval($_GET['e'])));
           $av = array();
-          $bf = mysqli_fetch_all(get_effect($universe=$_GET['u'], $effect=$_GET['e']));
+          $bf = mysqli_fetch_all(get_effect($universe=$_GET['u'], $effect=intval($_GET['e'])));
           $bv = array();
           while ($av or $af) {
             foreach ($af as $a) {
-              array_push($av, get_event($universe=$_GET['u'], $name=$a['To'], $array=true));
+              array_push($av, get_event($universe=$_GET['u'], $id=$a['Cause'], $array=true));
             }
             array_merge($f, $af);
             $af = array();
             foreach ($av as $a) {
-              array_merge($af, mysqli_fetch_all(get_effect($universe=$_GET['u'], $cause=$a['Name'])));
+              array_merge($af, mysqli_fetch_all(get_effect($universe=$_GET['u'], $cause=$a['PID'])));
             }
             array_merge($v, $av);
             $av = array();
           }
           while ($bv or $bf) {
             foreach ($bf as $b) {
-              array_push($bv, get_event($name=$b['To'], $universe=$_GET['u'], $array=true));
+              array_push($bv, get_event($id=$b['Effect'], $universe=$_GET['u'], $array=true));
             }
             array_merge($f, $bf);
             $af = array();
             foreach ($bv as $b) {
-              array_merge($bf, mysqli_fetch_all(get_effect($universe=$_GET['u'], $effect=$b['Name'])));
+              array_merge($bf, mysqli_fetch_all(get_effect($universe=$_GET['u'], $effect=$b['PID'])));
             }
             array_merge($v, $bv);
             $av = array();
