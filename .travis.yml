@@ -1,4 +1,6 @@
 language: php
 php:
   - 5.5
-script: php setup.php
+script:
+  php setup.php
+  php-cgi -f submit/handle_event.php universe=human name=yesterday date=2021.7 location=(1,2)
