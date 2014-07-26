@@ -1,25 +1,25 @@
 <?php
   include "settings/general.php";
-  get_universe($_POST['universe']);
+  get_universe($_GET['universe']);
   
   $con=connect();
   
-  if(!is_valid_name($_POST['name'])) { 
+  if(!is_valid_name($_GET['name'])) { 
     echo 'The name you entered is invalid, please only use letters, numbers, and spaces.'; 
   }
-  elseif(mysqli_fetch_array(mysqli_query($con,"SELECT * FROM Events WHERE Name = " . sqlite_escape_string($_POST['name']) . " and Universe = " . $_POST['universe']))){
+  elseif(mysqli_fetch_array(mysqli_query($con,"SELECT * FROM Events WHERE Name = " . sqlite_escape_string($_GET['name']) . " and Universe = " . $_GET['universe']))){
     echo 'Sorry, that name is already taken. Please try something slightly more descriptive.';
   }
-  elseif(! is_valid_date($_POST['date'])) {
+  elseif(! is_valid_date($_GET['date'])) {
     echo 'Sorry, your date string is invalid. Please read the <a href="formatting.html">formatting directions</a> and try again.';
   }
-  elseif(! is_valid_place($_POST['location'])) {
+  elseif(! is_valid_place($_GET['location'])) {
     echo 'Sorry, your location string is invalid. Please read the <a href="formatting.html">formatting directions</a> and try again.';
   }
   else {
-    $str = $_POST['name'] . "', '" . $_POST['universe'] . "', '" . $_POST['date'] . "', '" . $_POST['location'] . ")"
+    $str = $_GET['name'] . "', '" . $_GET['universe'] . "', '" . $_GET['date'] . "', '" . $_GET['location'] . ")"
     mysqli_query($con,"INSERT INTO Events (Name, Universe, Date, Location) VALUES ('" . $str);
-    $int = mysqli_fetch_array(mysqli_query("SELECT * FROM Events WHERE Universe = " . $_POST['universe'] . " and Name = " . $_POST['name']))[0]['PID'];
+    $int = mysqli_fetch_array(mysqli_query("SELECT * FROM Events WHERE Universe = " . $_GET['universe'] . " and Name = " . $_GET['name']))[0]['PID'];
     echo "<h1>Record Added Successfully!</h1><br><p>Click <a href='submit_essay.php?type=v&id=" . $int . "' target='submit'>here</a> to add an extended description.</p>";
   }
 ?>
