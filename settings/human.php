@@ -2,12 +2,12 @@
   $types = array('political' => 'red',
                  'ideological' => 'blue'); //must be less than 15 chars
   function is_valid_date($string) {
-    $s = sscanf($string, "%d");
-    return $string == sprintf("%d", $s[0]);
+    $s = sscanf($string, "%f");
+    return $string == sprintf("%f", $s[0]);
   }
   function is_valid_place($string) {
-    $s = sscanf($string, "(%d, %d)");
-    return $string == sprintf("(%d, %d)", $s[0], $s[1]);
+    $s = sscanf($string, "(%f, %f)");
+    return $string == sprintf("(%f, %f)", $s[0], $s[1]);
   }
   function is_valid_type($string) {
     return array_key_exists($string, $types);
@@ -19,9 +19,9 @@
     return 'red';
   }
   function get_space_coord($event) {
-    return sscanf($event['location'], "(%d, %d)")[1];
+    return sscanf($event['location'], "(%f, %f)")[1];
   }
   function get_time_coord($event) {
-    return sscanf($event['date'], "%d")[0];
+    return sscanf($event['date'], "%f")[0];
   }
 ?>
