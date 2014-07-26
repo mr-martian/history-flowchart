@@ -1,7 +1,7 @@
 <html>
   <body>
     <?php
-      include 'settings/general.php';
+      include 'globals.php';
       get_universe($_GET['u']);
 
       function ev2svg($event) {
