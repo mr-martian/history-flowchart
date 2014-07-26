@@ -1,5 +1,5 @@
 <?php
-  include "/settings/general.php";
+  include "/general.php";
   get_universe($_GET['universe']);
   
   $con=connect();
