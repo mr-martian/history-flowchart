@@ -51,4 +51,5 @@
   } else {
     echo "\nError creating table: " . mysqli_error($con);
   }
+  echo "\n";
 ?>
