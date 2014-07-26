@@ -1,7 +1,7 @@
 <?php
   include "settings/general.php";
   $result = get_event($universe=$_GET['u']);
-echo "<a href='get_graph.php?u=" . $_GET['u'] . "&e=*'>Show everything</a>";
+echo "<a href='" . $_GET['url'] . "?u=" . $_GET['u'] . "&e=*'>All of the below</a>";
 echo "<p>Control-f is recommended for finding things on this list.</p>";
 echo "<table>
 <tr>
@@ -10,7 +10,7 @@ echo "<table>
 <th>Location</th>
 </tr>";
 
-$str = "<td><a href='get_graph.php?u=" . $_GET['u'] . "&e=";
+$str = "<td><a href='" . $_GET['url'] . "?u=" . $_GET['u'] . "&e=";
 
 while($row = mysqli_fetch_array($result)) {
   echo "<tr>";
