@@ -1,5 +1,5 @@
 <?php
-  include "/general.php";
+  include "general.php";
   $create=connect(false);
 
   // Create database
