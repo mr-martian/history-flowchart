@@ -17,7 +17,7 @@
     echo 'Sorry, your location string is invalid. Please read the <a href="formatting.html">formatting directions</a> and try again.';
   }
   else {
-    $str = $_GET['name'] . "', '" . $_GET['universe'] . "', '" . $_GET['date'] . "', '" . $_GET['location'] . ")";
+    $str = mysqli_real_escape_string($con,$_GET['name']) . "', '" . $_GET['universe'] . "', '" . $_GET['date'] . "', '" . $_GET['location'] . ")";
     mysqli_query($con,"INSERT INTO Events (Name, Universe, Date, Location) VALUES ('" . $str);
     $int = mysqli_fetch_array(mysqli_query("SELECT * FROM Events WHERE Universe = " . $_GET['universe'] . " and Name = " . mysqli_real_escape_string($con,$_GET['name'])))[0]['PID'];
     echo "<h1>Record Added Successfully!</h1><br><p>Click <a href='submit_essay.php?type=v&id=" . $int . "' target='submit'>here</a> to add an extended description.</p>";
