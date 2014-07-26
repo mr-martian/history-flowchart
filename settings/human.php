@@ -2,12 +2,10 @@
   $types = array('political' => 'red',
                  'ideological' => 'blue'); //must be less than 15 chars
   function is_valid_date($string) {
-    $s = sscanf($string, "%f");
-    return $string == sprintf("%f", $s[0]);
+    return preg_match("/^+\d?\.*\d$/", $string) == 1;
   }
   function is_valid_place($string) {
-    $s = sscanf($string, "(%f, %f)");
-    return $string == sprintf("(%f, %f)", $s[0], $s[1]);
+    return preg_match("/^\(+\d?\.*\d, +\d?\.*\d\)$/", $string) == 1;
   }
   function is_valid_type($string) {
     return array_key_exists($string, $types);
