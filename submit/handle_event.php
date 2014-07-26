@@ -1,13 +1,13 @@
 <?php
   include "../globals.php";
-  get_universe($_GET['universe']);
+  include get_universe_path($_GET['universe']);
   
   $con=connect();
   
   if(!is_valid_name($_GET['name'])) { 
     echo 'The name you entered is invalid, please only use letters, numbers, and spaces.'; 
   }
-  elseif(mysqli_fetch_array(mysqli_query($con,"SELECT * FROM Events WHERE Name = " . mysqli_real_escape_string($_GET['name']) . " and Universe = " . $_GET['universe']))){
+  elseif(mysqli_fetch_array(mysqli_query($con,"SELECT * FROM Events WHERE Name = " . mysqli_real_escape_string($con,$_GET['name']) . " and Universe = " . $_GET['universe']))){
     echo 'Sorry, that name is already taken. Please try something slightly more descriptive.';
   }
   elseif(! is_valid_date($_GET['date'])) {
