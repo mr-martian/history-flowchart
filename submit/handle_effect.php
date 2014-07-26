@@ -1,5 +1,5 @@
 <?php
-  include "settings/general.php";
+  include "../globals.php";
   get_universe($_GET['u']);
   
   if(get_effect($cause=$_GET['c'], $effect=$_GET['e'], $type=$_GET['t'], $array=true)){
