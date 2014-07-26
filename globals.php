@@ -4,14 +4,11 @@
     "Natural" => "History of the universe prior to the advent of human civilization"
   );
   function get_universe_path($name, $root=false) {
-    global $UNIVERSES;
-    if (array_key_exists($name, $UNIVERSES)) {
-      if ($root) {
-        return "settings/".$name.".php";
-      }
-      else {
-        return "../settings/".$name.".php";
-      }
+    if ($root) {
+      return "settings/".$name.".php";
+    }
+    else {
+      return "../settings/".$name.".php";
     }
   }
   function is_valid_name($name) {
