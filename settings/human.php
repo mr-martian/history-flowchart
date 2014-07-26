@@ -5,7 +5,7 @@
     return preg_match("/^\d+(\.\d+)?$/", $string) == 1;
   }
   function is_valid_place($string) {
-    return preg_match("/^\(\d+(\.\d+)?, \d+(\.\d+)?)$/", $string) == 1;
+    return preg_match("/^\(\d+(\.\d+)?, \d+(\.\d+)?\)$/", $string) == 1;
   }
   function is_valid_type($string) {
     return array_key_exists($string, $types);
