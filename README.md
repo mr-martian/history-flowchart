@@ -9,8 +9,6 @@ It also has the capability to make graphs for other universes (fictional or othe
   - [ ] Human type list
   - [ ] Natural place list
   - [ ] Natural type list
-- [ ] make it look nice
-- [ ] advanced settings
 - [ ] `settings/natural.php`
   - [ ] type list
   - [ ] place list
