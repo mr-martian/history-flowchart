@@ -1,7 +1,7 @@
 <html>
   <body>
     <?php
-      include "settings/general.php";
+      include "../globals.php";
       $con = connect();
       $w = ($_GET['type'] == 'v' ? 'Vessays' : 'Fessays');
       mysqli_query($con,"INSERT INTO " . $w . " (Title, About) VALUES ('" . $_POST['title'] . "', " . $_GET['id'] . ")");
