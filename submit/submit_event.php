@@ -1,6 +1,6 @@
 <html>
   <body>
-    <form action="handle_event.php" method="post" target="result">
+    <form action="handle_event.php" method="get" target="result">
       <?php
         include "settings/general.php";
         echo "<select required name='universe'>";
