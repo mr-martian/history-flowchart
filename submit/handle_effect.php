@@ -15,7 +15,7 @@
     echo 'Type invalid, please try resubmitting the form.';
   }
   else {
-    if (mysqli_query($con,"INSERT INTO Events (Cause, Effect, Type, Universe) VALUES ('$c', '$e', '$t', '$u');")) {
+    if (mysqli_query($con,"INSERT INTO Effects (Cause, Effect, Type, Universe) VALUES ('$c', '$e', '$t', '$u');")) {
       $int = get_effect($cause=$c, $effect=$e, $universe =$u, $type=$t, $array=true)['PID'];
       echo "<h1>Record Added Successfully!</h1><br><p>Click <a href='submit_essay.php?type=f&id=$int' target='submit'>here</a> to add an extended description.</p>\n";
     }
