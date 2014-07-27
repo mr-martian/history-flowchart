@@ -33,7 +33,7 @@
           return array(mysqli_fetch_all(get_event($universe=$_GET['u'])),
                        mysqli_fetch_all(get_effect($universe=$_GET['u'])));
         }
-        else {
+        elseif (is_numeric($_GET['e'])) {
           $v = array(get_event($id=intval($_GET['e']), $universe=$_GET['u'], $array=true));
           $f = array();
           $af = mysqli_fetch_all(get_effect($universe=$_GET['u'], $cause=intval($_GET['e'])));
