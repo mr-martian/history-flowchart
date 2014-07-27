@@ -31,15 +31,15 @@
       function get_vfs() {
         global $con;
         if($_GET['e'] == '*') {
-          return array(mysqli_fetch_all(get_event($universe=$_GET['u']), $resulttype = MYSQLI_NUM),
-                       mysqli_fetch_all(get_effect($universe=$_GET['u']), $resulttype = MYSQLI_NUM));
+          return array(mysqli_fetch_all(get_event($universe=$_GET['u']), $resulttype = MYSQLI_ASSOC),
+                       mysqli_fetch_all(get_effect($universe=$_GET['u']), $resulttype = MYSQLI_ASSOC));
         }
         elseif (is_numeric($_GET['e'])) {
           $v = array(get_event($id=intval($_GET['e']), $universe=$_GET['u'], $array=true));
           $f = array();
-          $af = mysqli_fetch_all(get_effect($universe=$_GET['u'], $cause=intval($_GET['e'])), $resulttype = MYSQLI_NUM);
+          $af = mysqli_fetch_all(get_effect($universe=$_GET['u'], $cause=intval($_GET['e'])), $resulttype = MYSQLI_ASSOC);
           $av = array();
-          $bf = mysqli_fetch_all(get_effect($universe=$_GET['u'], $effect=intval($_GET['e'])), $resulttype = MYSQLI_NUM);
+          $bf = mysqli_fetch_all(get_effect($universe=$_GET['u'], $effect=intval($_GET['e'])), $resulttype = MYSQLI_ASSOC);
           $bv = array();
           while ($av or $af) {
             foreach ($af as $a) {
@@ -48,7 +48,7 @@
             array_merge($f, $af);
             $af = array();
             foreach ($av as $a) {
-              array_merge($af, mysqli_fetch_all(get_effect($universe=$_GET['u'], $cause=$a['PID']), $resulttype = MYSQLI_NUM));
+              array_merge($af, mysqli_fetch_all(get_effect($universe=$_GET['u'], $cause=$a['PID']), $resulttype = MYSQLI_ASSOC));
             }
             array_merge($v, $av);
             $av = array();
@@ -60,7 +60,7 @@
             array_merge($f, $bf);
             $af = array();
             foreach ($bv as $b) {
-              array_merge($bf, mysqli_fetch_all(get_effect($universe=$_GET['u'], $effect=$b['PID']), $resulttype = MYSQLI_NUM));
+              array_merge($bf, mysqli_fetch_all(get_effect($universe=$_GET['u'], $effect=$b['PID']), $resulttype = MYSQLI_ASSOC));
             }
             array_merge($v, $bv);
             $av = array();
