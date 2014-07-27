@@ -16,7 +16,7 @@
   }
   else {
     if (mysqli_query($con,"INSERT INTO Effects (Cause, Effect, Type, Universe) VALUES ('$c', '$e', '$t', '$u');")) {
-      $int = get_effect($cause=$c, $effect=$e, $universe =$u, $type=$t, $array=true)['PID'];
+      $int = mysqli_fetch_array(mysqli_query($con, "SELECT * FROM Effects WHERE Cause='$c' and Effect='$e' and Type='$t' and Universe='$u'"))['PID'];
       echo "<h1>Record Added Successfully!</h1><br><p>Click <a href='submit_essay.php?type=f&id=$int' target='submit'>here</a> to add an extended description.</p>\n";
     }
     else {
