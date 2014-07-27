@@ -2,7 +2,7 @@
   include "../globals.php";
   include get_universe_path($_GET['u']);
   
-  if(get_effect($cause=$_GET['c'], $effect=$_GET['e'], $type=$_GET['t'], $array=true)){
+  if(mysqli_num_rows(get_effect($cause=$_GET['c'], $effect=$_GET['e'], $type=$_GET['t'])) != 0){
     echo 'Sorry, that cause & effect chain has already been entered. Please add something new.';
   }
   elseif(!is_valid_type($_GET['t'])) {
