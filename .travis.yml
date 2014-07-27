@@ -5,4 +5,4 @@ script:
   php setup.php;
   php-cgi -f submit/handle_event.php universe=human name="EXAMPLE" date="2021.7" location="(1.0, 2.0)";
   php-cgi -f submit/handle_event.php universe=human name="KABOOM" date="1921.7" location="(70, 2.03)";
-  php-cgi -f submit/handle_effect.php u=human c=2 e=1 t=ideological;
+  php-cgi -f submit/handle_effect.php u=human c="2" e="1" t="ideological";
