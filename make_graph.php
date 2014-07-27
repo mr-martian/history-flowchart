@@ -16,8 +16,8 @@
         return $rs0 . $rs1 . $s4 . $event['Name'] . $s5;
       }
       function ef2svg($effect) {
-        $f = mysqli_fetch_array(get_event($id=$effect['Cause'], $universe=$_GET['u']), $resulttype = MYSQLI_ASSOC);
-        $t = mysqli_fetch_array(get_event($id=$effect['Effect'], $universe=$_GET['u']), $resulttype = MYSQLI_ASSOC);
+        $f = mysqli_fetch_array(get_event($id=$effect['Cause']), $resulttype = MYSQLI_ASSOC);
+        $t = mysqli_fetch_array(get_event($id=$effect['Effect']), $resulttype = MYSQLI_ASSOC);
         $s0 = '<line x1="' . get_time_coord($f);
         $s1 = '" y1="' . get_space_coord($f);
         $s2 = '" x2="' . get_time_coord($t);
