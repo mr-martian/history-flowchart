@@ -60,7 +60,12 @@
     }
     $ret = mysqli_query($con, "SELECT * FROM Events" . ($added ? $str : ''));
     mysqli_close($con);
-    return ($array ? mysqli_fetch_array($ret) : $ret);
+    if ($array) {
+      return mysqli_fetch_assoc($ret);
+    }
+    else {
+      return $ret;
+    }
   }
   function get_effect($universe=null, $id=null, $cause=null, $effect=null, $type=null, $array=false) {
     $con = connect();
@@ -91,7 +96,12 @@
     }
     $ret = mysqli_query($con, "SELECT * FROM Effects" . ($added ? $str : ''));
     mysqli_close($con);
-    return ($array ? mysqli_fetch_array($ret) : $ret);
+    if ($array) {
+      return mysqli_fetch_assoc($ret);
+    }
+    else {
+      return $ret;
+    }
   }
   function effect_summary($id) {
     $ef = get_effect($id=$id, $array=true);
