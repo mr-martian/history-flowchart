@@ -1,6 +1,6 @@
 <?php
   include "../globals.php";
-  get_universe($_GET['u']);
+  include get_universe_path($_GET['u']);
   
   if(get_effect($cause=$_GET['c'], $effect=$_GET['e'], $type=$_GET['t'], $array=true)){
     echo 'Sorry, that cause & effect chain has already been entered. Please add something new.';
