@@ -16,6 +16,7 @@
         return $rs0 . $rs1 . $s4 . $event['Name'] . $s5;
       }
       function ef2svg($effect) {
+        print_r($effect);
         $f = get_event($id=$effect['Cause'], $universe=$_GET['u']);
         $t = get_event($id=$effect['Effect'], $universe=$_GET['u']);
         $s0 = '<line x1="' . get_time_coord($f);
