@@ -32,6 +32,7 @@
   function get_event($name=null, $universe=null, $id=null, $date=null, $location=null, $array=false) {
     $con = connect();
     $str = ' WHERE';
+    global $UNIVERSES;
     if ($name) {
       if (is_valid_name($name)) {
         $str .= " Name = '" . $name . "'";
@@ -64,6 +65,7 @@
   function get_effect($universe=null, $id=null, $cause=null, $effect=null, $type=null, $array=false) {
     $con = connect();
     $str = ' WHERE';
+    global $UNIVERSES;
     if ($universe) {
       if (array_key_exists($universe, $UNIVERSES)) {
         $str .= " Universe = '" . $universe . "'";
