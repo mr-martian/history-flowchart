@@ -32,7 +32,7 @@
       function get_vfs() {
         global $con;
         if($_GET['e'] == '*') {
-          return array('v' => mysqli_fetch_all(mysqli_query($con, "SELECT * FROM Events WHERE Universe = '" . $_GET['u'] . "'"), $resulttype = MYSQLI_ASSOC),
+          return array('v' => mysqli_fetch_all(mysqli_query($con, "SELECT * FROM Events WHERE Universe = '" . $_GET['u'] . "'")),
                        'f' => mysqli_fetch_all(get_effect($universe=$_GET['u']), $resulttype = MYSQLI_ASSOC));
         }
         elseif (is_numeric($_GET['e'])) {
