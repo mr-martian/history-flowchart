@@ -17,8 +17,8 @@
       }
       function ef2svg($effect) {
         $con = connect();
-        $f = mysqli_fetch_assoc(mysqli_query($con, "SELECT 1 FROM Events WHERE PID = " . $effect['Cause']));
-        $t = mysqli_fetch_assoc(mysqli_query($con, "SELECT 1 FROM Events WHERE PID = " . $effect['Effect']));
+        $f = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM Events WHERE PID = " . $effect['Cause']));
+        $t = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM Events WHERE PID = " . $effect['Effect']));
         print_r($f);
         print_r($t);
         $s0 = '<line x1="' . get_time_coord($f);
