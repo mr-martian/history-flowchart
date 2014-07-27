@@ -24,7 +24,7 @@
         $s1 = '" y1="' . get_space_coord($f);
         $s2 = '" x2="' . get_time_coord($t);
         $s3 = '" y2="' . get_space_coord($t);
-        $s4 = '" color="' . get_effect_color($effect);
+        $s4 = '" stroke-width="3" stroke="' . get_effect_color($effect);
         $s5 = '" onclick="window.open(\'' . 'get_essay/get_essay.php?type=f&id=' . $effect['PID'];
         $s6 = '\')" marker-end="url(#triangle)"><title>' . $f['Name'] . ' to ' . $t['Name'];
         return $s0 . $s1 . $s2 . $s3 . $s4 . $s5 . $s6 . '</title></line>';
@@ -32,8 +32,8 @@
       function get_vfs() {
         global $con;
         if($_GET['e'] == '*') {
-          return array(mysqli_fetch_all(get_event($universe=$_GET['u']), $resulttype = MYSQLI_ASSOC),
-                       mysqli_fetch_all(get_effect($universe=$_GET['u']), $resulttype = MYSQLI_ASSOC));
+          return array('v' => mysqli_fetch_all(mysqli_query($con, "SELECT * FROM Events WHERE Universe = '" . $_GET['u'] . "'"), $resulttype = MYSQLI_ASSOC),
+                       'f' => mysqli_fetch_all(get_effect($universe=$_GET['u']), $resulttype = MYSQLI_ASSOC));
         }
         elseif (is_numeric($_GET['e'])) {
           $v = array(get_event($id=intval($_GET['e']), $universe=$_GET['u'], $array=true));
@@ -66,20 +66,20 @@
             array_merge($v, $bv);
             $av = array();
           }
-          return array($v, $f);
+          return array('v' => $v, 'f' => $f);
         }
         else {
-          return array(array(), array());
+          return array('v' => array(), 'f' => array());
         }
       }
       $stuff = get_vfs();
-      echo '<svg>';
+      echo '<svg ' . $svg . '>';
       echo '<marker xmlns="http://www.w3.org/2000/svg" id="triangle" viewBox="0 0 10 10" refX="0" refY="5" markerUnits="strokeWidth" markerWidth="4" markerHeight="3" orient="auto">
       <path d="M 0 0 L 10 5 L 0 10 z"/></marker>';
-      foreach ($stuff[0] as $ev) {
+      foreach ($stuff['v'] as $ev) {
         echo ev2svg($ev);
       }
-      foreach ($stuff[1] as $ef) {
+      foreach ($stuff['f'] as $ef) {
         echo ef2svg($ef);
       }
       echo '</svg>';
