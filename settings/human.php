@@ -13,15 +13,15 @@
   }
   function get_effect_color($effect) {
     global $types;
-    return $types[$effect['type']];
+    return $types[$effect['Type']];
   }
   function get_event_color($event) {
     return 'red';
   }
   function get_space_coord($event) {
-    return sscanf($event['location'], "(%f, %f)")[1];
+    return sscanf($event['Location'], "(%f, %f)")[1];
   }
   function get_time_coord($event) {
-    return sscanf($event['date'], "%f")[0];
+    return sscanf($event['Date'], "%f")[0];
   }
 ?>
