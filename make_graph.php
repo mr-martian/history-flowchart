@@ -5,6 +5,7 @@
       include get_universe_path($_GET['u'], $root=true);
 
       function ev2svg($event) {
+        print_r($event);
         $s0 = '<circle r="5" stroke="black" stroke-width="1" cx="';
         $s1 = '" cy="';
         $s2 = '" fill="';
@@ -19,8 +20,6 @@
         $con = connect();
         $f = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM Events WHERE PID = " . $effect['Cause']));
         $t = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM Events WHERE PID = " . $effect['Effect']));
-        print_r($f);
-        print_r($t);
         $s0 = '<line x1="' . get_time_coord($f);
         $s1 = '" y1="' . get_space_coord($f);
         $s2 = '" x2="' . get_time_coord($t);
