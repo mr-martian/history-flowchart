@@ -39,17 +39,11 @@
         $str .= " Name = '" . $name . "'";
         $added = true;
       }
-      else {
-        return null;
-      }
     }
     if ($universe) {
       if (array_key_exists($universe, $UNIVERSES)) {
         $str .= ($added ? ' AND' : '') . " Universe = '" . $universe . "'";
       $added = true;
-      }
-      else {
-        return null;
       }
     }
     if ($id) {
@@ -77,9 +71,6 @@
       if (array_key_exists($universe, $UNIVERSES)) {
         $str .= " Universe = '" . $universe . "'";
         $added = true;
-      }
-      else {
-        return null;
       }
     }
     if ($id) {
