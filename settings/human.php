@@ -1,4 +1,5 @@
 <?php
+  $svg = 'height="360" width="7100" viewPort="-5000 -180 2100 180"';
   $types = array('political' => 'red',
                  'ideological' => 'blue'); //must be less than 15 chars
   function is_valid_date($string) {
