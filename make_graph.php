@@ -2,7 +2,7 @@
   <body>
     <?php
       include 'globals.php';
-      get_universe($_GET['u']);
+      include get_universe_path($_GET['u']);
 
       function ev2svg($event) {
         $s0 = '<circle r="5" stroke="black" stroke-width="1" cx="';
