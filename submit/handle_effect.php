@@ -10,8 +10,8 @@
   }
   else {
     $con = connect();
-    $str = mysqli_real_escape_string(strval(intval($_GET['c']))) . ", " . mysqli_real_escape_string(strval(intval($_GET['e'])));
-    $str .= ", '" . mysqli_real_escape_string($_GET['t']) . "', '" . mysqli_real_escape_string($_GET['u']) . "');";
+    $str = mysqli_real_escape_string($con, strval(intval($_GET['c']))) . ", " . mysqli_real_escape_string($con, strval(intval($_GET['e'])));
+    $str .= ", '" . mysqli_real_escape_string($con, $_GET['t']) . "', '" . mysqli_real_escape_string($con, $_GET['u']) . "');";
     if (mysqli_query($con,"INSERT INTO Events (Cause, Effect, Type, Universe) VALUES (" . $str)) {
       $int = get_effect($cause=intval($_GET['c']), $effect=intval($_GET['e']), $universe =$_GET['u'], $type=$_GET['t'], $array=true);
       echo "<h1>Record Added Successfully!</h1><br><p>Click <a href='submit_essay.php?type=f&id=" . $int['PID'] . "' target='submit'>here</a> to add an extended description.</p>\n";
