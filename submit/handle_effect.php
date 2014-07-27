@@ -2,19 +2,22 @@
   include "../globals.php";
   include get_universe_path($_GET['u']);
   
-  if(mysqli_num_rows(get_effect($cause=$_GET['c'], $effect=$_GET['e'], $type=$_GET['t'])) != 0){
+  $con = connect();
+  $c = mysqli_real_escape_string($con, strval(intval($_GET['c'])));
+  $e = mysqli_real_escape_string($con, strval(intval($_GET['e'])));
+  $t = mysqli_real_escape_string($con, $_GET['t']);
+  $u = mysqli_real_escape_string($con, $_GET['u']);
+  
+  if(mysqli_num_rows(get_effect($cause=$c, $effect=$e, $type=$t)) != 0){
     echo 'Sorry, that cause & effect chain has already been entered. Please add something new.';
   }
-  elseif(!is_valid_type($_GET['t'])) {
+  elseif(!is_valid_type($t)) {
     echo 'Type invalid, please try resubmitting the form.';
   }
   else {
-    $con = connect();
-    $str = mysqli_real_escape_string($con, strval(intval($_GET['c']))) . "', '" . mysqli_real_escape_string($con, strval(intval($_GET['e'])));
-    $str .= "', '" . mysqli_real_escape_string($con, $_GET['t']) . "', '" . mysqli_real_escape_string($con, $_GET['u']) . "');";
-    if (mysqli_query($con,"INSERT INTO Events (Cause, Effect, Type, Universe) VALUES ('" . $str)) {
-      $int = get_effect($cause=intval($_GET['c']), $effect=intval($_GET['e']), $universe =$_GET['u'], $type=$_GET['t'], $array=true);
-      echo "<h1>Record Added Successfully!</h1><br><p>Click <a href='submit_essay.php?type=f&id=" . $int['PID'] . "' target='submit'>here</a> to add an extended description.</p>\n";
+    if (mysqli_query($con,"INSERT INTO Events (Cause, Effect, Type, Universe) VALUES ('$c', '$e', '$t', '$u');")) {
+      $int = get_effect($cause=$c, $effect=$e, $universe =$u, $type=$t, $array=true)['PID'];
+      echo "<h1>Record Added Successfully!</h1><br><p>Click <a href='submit_essay.php?type=f&id=$int' target='submit'>here</a> to add an extended description.</p>\n";
     }
     else {
       echo "<h1>There was an error, please try again.</h1>";
