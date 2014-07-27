@@ -8,9 +8,11 @@
     return preg_match("/^\(\d+(\.\d+)?, \d+(\.\d+)?\)$/", $string) == 1;
   }
   function is_valid_type($string) {
+    global $types;
     return array_key_exists($string, $types);
   }
   function get_effect_color($effect) {
+    global $types;
     return $types[$effect['type']];
   }
   function get_event_color($event) {
