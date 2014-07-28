@@ -1,5 +1,5 @@
 <?php
-  $svg = 'height="360" width="7100" viewPort="-5000 -180 7100 360"';
+  $svg = 'height="360" width="7100"'// viewPort="-5000 -180 7100 360"';
   $types = array('political' => 'red',
                  'ideological' => 'blue'); //must be less than 15 chars
   function is_valid_date($string) {
@@ -20,9 +20,9 @@
     return 'red';
   }
   function get_space_coord($event) {
-    return sscanf($event['Location'], "(%f, %f)")[1];
+    return sscanf($event['Location'], "(%f, %f)")[1] + 180;
   }
   function get_time_coord($event) {
-    return sscanf($event['Date'], "%f")[0];
+    return sscanf($event['Date'], "%f")[0] + 5000;
   }
 ?>
