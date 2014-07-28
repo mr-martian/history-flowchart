@@ -72,12 +72,12 @@
               array_push($bv, mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM Events WHERE Universe = '" . $_GET['u'] . "' and PID = " . $b['Effect'])));
             }
             allef2svg($bf);
-            $af = array();
+            $bf = array();
             foreach ($bv as $b) {
               array_merge($bf, mysqli_fetch_all(get_effect($universe=$_GET['u'], $effect=$b['PID']), $resulttype = MYSQLI_ASSOC));
             }
             allev2svg($bv);
-            $av = array();
+            $bv = array();
           }
         }
         else {
