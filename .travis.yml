@@ -3,7 +3,8 @@ php:
   - 5.5
 script:
   php setup.php;
-  php-cgi -f submit/handle_event.php universe=human name="EXAMPLE" date="2021.7" location="(1.0, 2.0)";
-  php-cgi -f submit/handle_event.php universe=human name="KABOOM" date="1921.7" location="(70, 2.03)";
+  php-cgi -f submit/handle_event.php universe=human name="EXAMPLE" date="1730.7" location="(1.0, 27.0)";
+  php-cgi -f submit/handle_event.php universe=human name="KABOOM" date="1921.7" location="(70, 12.03)";
   php-cgi -f submit/handle_effect.php u=human c="2" e="1" t="ideological";
   php-cgi -f make_graph.php u=human e="*";
+  php-cgi -f make_graph.php u=human e="1";
