@@ -6,6 +6,8 @@
 
 ###Contents:
 
+- $svg
+  - string describing height, width, and viewBox for an SVG screen
 - $types
   - associative array, keys are types (<= 15 characters), values are colors
 - is_valid_date($string)
