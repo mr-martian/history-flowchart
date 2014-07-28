@@ -50,7 +50,7 @@
           return true;
         }
         elseif (is_numeric($_GET['e'])) {
-          echo ev2svg(get_event($id=intval($_GET['e']), $universe=$_GET['u'], $array=true));
+          echo ev2svg(mysqli_fetch_assoc(get_event($id=intval($_GET['e']), $universe=$_GET['u'])));
           $af = mysqli_fetch_all(get_effect($universe=$_GET['u'], $cause=intval($_GET['e'])), $resulttype = MYSQLI_ASSOC);
           $av = array();
           $bf = mysqli_fetch_all(get_effect($universe=$_GET['u'], $effect=intval($_GET['e'])), $resulttype = MYSQLI_ASSOC);
