@@ -3,6 +3,7 @@
     <?php
       include 'globals.php';
       include get_universe_path($_GET['u'], $root=true);
+      $con = connect();
 
       function ev2svg($event) {
         print_r($event);
