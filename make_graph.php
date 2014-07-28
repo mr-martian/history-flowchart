@@ -43,7 +43,7 @@
           $bv = array();
           while ($av or $af) {
             foreach ($af as $a) {
-              array_push($av, get_event($universe=$_GET['u'], $id=$a['Cause'], $array=true));
+              array_push($av, mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM Events WHERE Universe = '" . $_GET['u'] . "' and PID = " $a['Cause'])));
             }
             array_merge($f, $af);
             $af = array();
@@ -55,7 +55,7 @@
           }
           while ($bv or $bf) {
             foreach ($bf as $b) {
-              array_push($bv, get_event($id=$b['Effect'], $universe=$_GET['u'], $array=true));
+              array_push($bv, mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM Events WHERE Universe = '" . $_GET['u'] . "' and PID = " $b['Effect'])))
             }
             array_merge($f, $bf);
             $af = array();
