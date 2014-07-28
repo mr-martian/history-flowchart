@@ -1,5 +1,5 @@
 <?php
-  $svg = 'height="50" width="4500" viewPort="0 0 4500 50"';
+  $svg = 'height="50" width="4500"';// viewPort="0 0 4500 50"';
   $places = array('universe' => 5,
                   'milky way' => 10);
   $types = array('evolution' => 'blue'); //must be less than 15 chars
