@@ -43,7 +43,7 @@
           $bv = array();
           while ($av or $af) {
             foreach ($af as $a) {
-              array_push($av, mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM Events WHERE Universe = '" . $_GET['u'] . "' and PID = " $a['Cause'])));
+              array_push($av, mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM Events WHERE Universe = '" . $_GET['u'] . "' and PID = " . $a['Cause'])));
             }
             array_merge($f, $af);
             $af = array();
