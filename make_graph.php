@@ -3,10 +3,8 @@
     <?php
       include 'globals.php';
       include get_universe_path($_GET['u'], $root=true);
-      $con = connect();
 
       function ev2svg($event) {
-        print_r($event);
         $s0 = '<circle r="5" stroke="black" stroke-width="1" cx="';
         $s1 = '" cy="';
         $s2 = '" fill="';
@@ -31,7 +29,7 @@
         return $s0 . $s1 . $s2 . $s3 . $s4 . $s5 . $s6 . '</title></line>';
       }
       function get_vfs() {
-        global $con;
+        $con = connect();
         if($_GET['e'] == '*') {
           return array('v' => mysqli_fetch_all(mysqli_query($con, "SELECT * FROM Events WHERE Universe = '" . $_GET['u'] . "'"), $resulttype = MYSQLI_ASSOC),
                        'f' => mysqli_fetch_all(get_effect($universe=$_GET['u']), $resulttype = MYSQLI_ASSOC));
@@ -75,7 +73,7 @@
       }
       $stuff = get_vfs();
       echo '<svg ' . $svg . '>';
-      echo '<marker xmlns="http://www.w3.org/2000/svg" id="triangle" viewBox="0 0 10 10" refX="0" refY="5" markerUnits="strokeWidth" markerWidth="4" markerHeight="3" orient="auto">
+      echo '<marker xmlns="http://www.w3.org/2000/svg" id="triangle" viewBox="0 0 10 10" refX="7" refY="5" markerUnits="strokeWidth" markerWidth="4" markerHeight="3" orient="auto">
       <path d="M 0 0 L 10 5 L 0 10 z"/></marker>';
       foreach ($stuff['v'] as $ev) {
         echo ev2svg($ev);
