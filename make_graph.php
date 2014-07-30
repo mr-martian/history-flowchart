@@ -28,60 +28,46 @@
         $s6 = '\')" marker-end="url(#triangle)"><title>' . $f['Name'] . ' to ' . $t['Name'];
         return $s0 . $s1 . $s2 . $s3 . $s4 . $s5 . $s6 . '</title></line>';
       }
-      function allev2svg($ls) {
-        foreach ($ls as $v) {
-          echo ev2svg($v);
+      function graph_causes($event) {
+        $con = connect();
+        $ls = mysqli_fetch_all(get_effect($universe=$_GET['u'], $effect=$event), $resulttype = MYSQLI_ASSOC);
+        $els = array();
+        while ($f = array_pop($ls)) {
+          echo ef2svg($f);
+          array_push($els, $f['Cause']);
+        }
+        while ($v = array_pop($ls)) {
+          echo ev2svg(get_event($universe=$_GET['u'], $id=$v, $array=true));
+          graph_causes($v);
         }
       }
-      function allef2svg($ls) {
-        foreach ($ls as $f) {
+      function graph_effects($event) {
+        $con = connect();
+        $ls = mysqli_fetch_all(get_effect($universe=$_GET['u'], $cause=$event), $resulttype = MYSQLI_ASSOC);
+        $els = array();
+        while ($f = array_pop($ls)) {
           echo ef2svg($f);
+          array_push($els, $f['Effect']);
+        }
+        while ($v = array_pop($ls)) {
+          echo ev2svg(get_event($universe=$_GET['u'], $id=$v, $array=true));
+          graph_causes($v);
         }
       }
       function graph() {
         $con = connect();
-        if($_GET['e'] == '*') {
+        if (is_numeric($_GET['e'])) {
+          echo ev2svg(get_event($universe=$_GET['u'], $id=$_GET['e'], $array=true));
+          graph_causes($_GET['e']);
+          graph_effects($_GET['e']);
+        }
+        else {
           foreach (mysqli_fetch_all(mysqli_query($con, "SELECT * FROM Events WHERE Universe = '" . $_GET['u'] . "'"), $resulttype = MYSQLI_ASSOC) as $v) {
             echo ev2svg($v);
           }
           foreach (mysqli_fetch_all(get_effect($universe=$_GET['u']), $resulttype = MYSQLI_ASSOC) as $f) {
             echo ef2svg($f);
           }
-          return true;
-        }
-        elseif (is_numeric($_GET['e'])) {
-          echo ev2svg(mysqli_fetch_assoc(get_event($id=intval($_GET['e']), $universe=$_GET['u'])));
-          $af = mysqli_fetch_all(get_effect($universe=$_GET['u'], $cause=intval($_GET['e'])), $resulttype = MYSQLI_ASSOC);
-          $av = array();
-          $bf = mysqli_fetch_all(get_effect($universe=$_GET['u'], $effect=intval($_GET['e'])), $resulttype = MYSQLI_ASSOC);
-          $bv = array();
-          while ($av or $af) {
-            foreach ($af as $a) {
-              array_push($av, mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM Events WHERE Universe = '" . $_GET['u'] . "' and PID = " . $a['Cause'])));
-            }
-            allef2svg($af);
-            $af = array();
-            foreach ($av as $a) {
-              array_merge($af, mysqli_fetch_all(get_effect($universe=$_GET['u'], $cause=$a['PID']), $resulttype = MYSQLI_ASSOC));
-            }
-            allev2svg($av);
-            $av = array();
-          }
-          while ($bv or $bf) {
-            foreach ($bf as $b) {
-              array_push($bv, mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM Events WHERE Universe = '" . $_GET['u'] . "' and PID = " . $b['Effect'])));
-            }
-            allef2svg($bf);
-            $bf = array();
-            foreach ($bv as $b) {
-              array_merge($bf, mysqli_fetch_all(get_effect($universe=$_GET['u'], $effect=$b['PID']), $resulttype = MYSQLI_ASSOC));
-            }
-            allev2svg($bv);
-            $bv = array();
-          }
-        }
-        else {
-          return true;
         }
       }
       echo '<svg ' . $svg . '>';
