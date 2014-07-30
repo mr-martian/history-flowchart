@@ -37,7 +37,7 @@
           array_push($els, $f['Cause']);
         }
         while ($v = array_pop($ls)) {
-          echo ev2svg(get_event_array($v));
+          echo ev2svg(mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM Events WHERE PID = $v")));
           graph_causes($v);
         }
       }
@@ -50,14 +50,14 @@
           array_push($els, $f['Effect']);
         }
         while ($v = array_pop($ls)) {
-          echo ev2svg(get_event_array($v));
+          echo ev2svg(mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM Events WHERE PID = $v")));
           graph_causes($v);
         }
       }
       function graph() {
         $con = connect();
         if (is_numeric($_GET['e'])) {
-          echo ev2svg(get_event_array($_GET['e']));
+          echo ev2svg(mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM Events WHERE PID = " . $_GET['e'])));
           graph_causes($_GET['e']);
           graph_effects($_GET['e']);
         }
