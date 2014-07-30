@@ -51,7 +51,7 @@
         }
         while ($v = array_pop($els)) {
           echo ev2svg(mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM Events WHERE PID = $v")));
-          graph_causes($v);
+          graph_effects($v);
         }
       }
       function graph() {
