@@ -17,8 +17,8 @@
       }
       function ef2svg($effect) {
         $con = connect();
-        $f = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM Events WHERE PID = " . $effect['Cause']));
-        $t = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM Events WHERE PID = " . $effect['Effect']));
+        $f = get_event_array($effect['Cause']);
+        $t = get_event_array($effect['Effect']);
         $s0 = '<line x1="' . get_time_coord($f);
         $s1 = '" y1="' . get_space_coord($f);
         $s2 = '" x2="' . get_time_coord($t);
@@ -37,7 +37,7 @@
           array_push($els, $f['Cause']);
         }
         while ($v = array_pop($ls)) {
-          echo ev2svg(get_event($universe=$_GET['u'], $id=$v, $array=true));
+          echo ev2svg(get_event_array($v));
           graph_causes($v);
         }
       }
@@ -50,14 +50,14 @@
           array_push($els, $f['Effect']);
         }
         while ($v = array_pop($ls)) {
-          echo ev2svg(get_event($universe=$_GET['u'], $id=$v, $array=true));
+          echo ev2svg(get_event_array($v));
           graph_causes($v);
         }
       }
       function graph() {
         $con = connect();
         if (is_numeric($_GET['e'])) {
-          echo ev2svg(get_event($universe=$_GET['u'], $id=$_GET['e'], $array=true));
+          echo ev2svg(get_event_array($_GET['e']));
           graph_causes($_GET['e']);
           graph_effects($_GET['e']);
         }
