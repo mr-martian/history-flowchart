@@ -29,6 +29,10 @@
       return $con;
     }
   }
+  function get_event_array($id) {
+    $con = connect();
+    return mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM Events WHERE PID = $id"));
+  }
   function get_event($name=null, $universe=null, $id=null, $date=null, $location=null, $array=false) {
     $con = connect();
     $str = ' WHERE';
