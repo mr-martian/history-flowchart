@@ -36,7 +36,7 @@
           echo ef2svg($f);
           array_push($els, $f['Cause']);
         }
-        while ($v = array_pop($ls)) {
+        while ($v = array_pop($els)) {
           echo ev2svg(mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM Events WHERE PID = $v")));
           graph_causes($v);
         }
@@ -49,7 +49,7 @@
           echo ef2svg($f);
           array_push($els, $f['Effect']);
         }
-        while ($v = array_pop($ls)) {
+        while ($v = array_pop($els)) {
           echo ev2svg(mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM Events WHERE PID = $v")));
           graph_causes($v);
         }
