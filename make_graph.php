@@ -30,7 +30,7 @@
       }
       function graph_causes($event) {
         $con = connect();
-        $ls = mysqli_fetch_all(get_effect($universe=$_GET['u'], $effect=$event), $resulttype = MYSQLI_ASSOC);
+        $ls = mysqli_fetch_all(mysqli_query($con, "SELECT * FROM Effects WHERE Effect = $event"), $resulttype = MYSQLI_ASSOC);
         $els = array();
         while ($f = array_pop($ls)) {
           echo ef2svg($f);
@@ -43,7 +43,7 @@
       }
       function graph_effects($event) {
         $con = connect();
-        $ls = mysqli_fetch_all(get_effect($universe=$_GET['u'], $cause=$event), $resulttype = MYSQLI_ASSOC);
+        $ls = mysqli_fetch_all(mysqli_query($con, "SELECT * FROM Effects WHERE Cause = $event"), $resulttype = MYSQLI_ASSOC);
         $els = array();
         while ($f = array_pop($ls)) {
           echo ef2svg($f);
