@@ -23,7 +23,7 @@
   }
     
   // Create table
-  $sql="CREATE TABLE Vessays(PID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(PID), Title CHAR(50), About INT(10));"; //add author, etc.?
+  $sql="CREATE TABLE Vessays(PID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(PID), Title CHAR(50), About INT(10), Name CHAR(30));";
 
   // Execute query
   if (mysqli_query($con,$sql)) {
@@ -43,7 +43,7 @@
   }
   
   // Create table
-  $sql="CREATE TABLE Fessays(PID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(PID), Title CHAR(50), About INT(10));";
+  $sql="CREATE TABLE Fessays(PID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(PID), Title CHAR(50), About INT(10), Name CHAR(30));";
 
   // Execute query
   if (mysqli_query($con,$sql)) {
