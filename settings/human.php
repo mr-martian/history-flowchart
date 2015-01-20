@@ -4,7 +4,7 @@
                  'ideological' => 'blue'); //must be less than 15 chars
   function is_valid_date($string) {
     //return preg_match("/^-?\d+(\.\d+)?$/", $string) == 1;
-    return preg_match("/^\d{1,2}//\d{1,2}//d{1,5}$/", $string) == 1;
+    return preg_match("/^\d{1,2}\/\d{1,2}\/d{1,5}$/", $string) == 1;
   }
   function is_valid_place($string) {
     return preg_match("/^\(-?\d+(\.\d+)?, -?\d+(\.\d+)?\)$/", $string) == 1;
