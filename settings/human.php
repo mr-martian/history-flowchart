@@ -30,7 +30,7 @@
     if ($y % 4 == 0 and ($y % 100 != 0 or $y % 400)) {
       $months[2] += 1;
     }
-    for ($i = 1, $i < 12, $i++) {
+    for ($i = 1; $i < 12; $i++) {
       $months[$i] += $months[$i-1];
     }
     $yp = $months[$m-1] + $d - 1;
