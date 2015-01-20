@@ -26,7 +26,7 @@
   function get_time_coord($event) {
     //return sscanf($event['Date'], "%f")[0] + 5000;
     sscanf($event['Date'], "%i/%i/%i", $m, $d, $y);
-    $months = array(0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 31);
+    $months = array(0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 31, 31);
     if ($y % 4 == 0 and ($y % 100 != 0 or $y % 400)) {
       $months[2] += 1;
     }
