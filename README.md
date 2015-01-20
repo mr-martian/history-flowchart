@@ -17,3 +17,6 @@ It also has the capability to make graphs for other universes (fictional or othe
 - [x] `get_essay`
 - [ ] access to `submit_essay.php` from home page
 - [ ] finish home page
+- [ ] flowchart customization
+  - [ ] date range restriction
+  - [ ] timeline
