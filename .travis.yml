@@ -3,14 +3,14 @@ php:
   - 5.5
 script:
   php setup.php;
-  php-cgi -f submit/handle_event.php universe=human name="EXAMPLE" date="1730.7" location="(1.0, 27.0)";
-  php-cgi -f submit/handle_event.php universe=human name="KABOOM" date="1921.7" location="(70, 12.03)";
-  php-cgi -f submit/handle_event.php universe=human name="yesterday" date="1776.5" location="(38.9, 77.02)";
-  php-cgi -f submit/handle_event.php universe=human name="other day" date="-47.5" location="(-38.9, 77.02)";
-  php-cgi -f submit/handle_event.php universe=human name="monday" date="1776.5" location="(38.9, -37)";
-  php-cgi -f submit/handle_event.php universe=human name="end of the world" date="35.9" location="(39.89, 13.183)";
-  php-cgi -f submit/handle_event.php universe=human name="zombie apocolypse begins" date="2107.98" location="(38.9, -77.02)";
-  php-cgi -f submit/handle_event.php universe=human name="world conquest day" date="2014.6685" location="(44.9183, 93.1561)";
+  php-cgi -f submit/handle_event.php universe=human name="EXAMPLE" date="7/1/1730" location="(1.0, 27.0)";
+  php-cgi -f submit/handle_event.php universe=human name="KABOOM" date="03/17/1921" location="(70, 12.03)";
+  php-cgi -f submit/handle_event.php universe=human name="yesterday" date="7/4/1776" location="(38.9, 77.02)";
+  php-cgi -f submit/handle_event.php universe=human name="other day" date="5/5/-47" location="(-38.9, 77.02)";
+  php-cgi -f submit/handle_event.php universe=human name="monday" date="1/2/1776" location="(38.9, -37)";
+  php-cgi -f submit/handle_event.php universe=human name="end of the world" date="12/25/35" location="(39.89, 13.183)";
+  php-cgi -f submit/handle_event.php universe=human name="zombie apocolypse begins" date="12/30/2107" location="(38.9, -77.02)";
+  php-cgi -f submit/handle_event.php universe=human name="world conquest day" date="9/2/2014" location="(44.9183, 93.1561)";
   php-cgi -f submit/handle_effect.php u=human c="2" e="1" t="ideological";
   php-cgi -f submit/handle_effect.php u=human c="8" e="7" t="political";
   php-cgi -f submit/handle_effect.php u=human c="6" e="5" t="ideological";
