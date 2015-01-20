@@ -33,7 +33,7 @@
     for ($i = 1; $i < 12; $i++) {
       $months[$i] += $months[$i-1];
     }
-    $yp = $months[$m-1] + $d - 1;
+    $yp = $months[$m - 1] + $d - 1;
     if ($y < 0) {
       $y++;
     }
