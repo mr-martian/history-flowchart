@@ -1,3 +1,4 @@
+`This is the multi branch, which has the capacity to accomadate multiple universes. This functionality was removed from the main branch because such action would nearly always be either very boring or of questionable copyright legality.`
 history-flowchart
 =================
 This program is intended to create flowcharts of history in the hope that this may help in searching for patterns that may help in predicting the future. If this plan fails, we'll still get some cool graphs.
