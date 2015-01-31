@@ -1,16 +1,4 @@
 <?php
-  $UNIVERSES = array(
-    "Human" => "Recorded human history",
-    "Natural" => "History of the universe prior to the advent of human civilization"
-  );
-  function get_universe_path($name, $root=false) {
-    if ($root) {
-      return "settings/".$name.".php";
-    }
-    else {
-      return "../settings/".$name.".php";
-    }
-  }
   function is_valid_name($name) {
     return ctype_alnum(str_replace(' ', '', $name)) and strlen($name) < 30;
   }
@@ -37,17 +25,10 @@
     $con = connect();
     $str = ' WHERE';
     $added = false;
-    global $UNIVERSES;
     if ($name) {
       if (is_valid_name($name)) {
         $str .= " Name = '" . $name . "'";
         $added = true;
-      }
-    }
-    if ($universe) {
-      if (array_key_exists($universe, $UNIVERSES)) {
-        $str .= ($added ? ' AND' : '') . " Universe = '" . $universe . "'";
-      $added = true;
       }
     }
     if ($id) {
@@ -75,13 +56,6 @@
     $con = connect();
     $str = ' WHERE';
     $added = false;
-    global $UNIVERSES;
-    if ($universe) {
-      if (array_key_exists($universe, $UNIVERSES)) {
-        $str .= " Universe = '" . $universe . "'";
-        $added = true;
-      }
-    }
     if ($id) {
       $str .= ($added ? ' AND' : '') . ' PID = ' . strval(intval($id));
       $added = true;
@@ -115,14 +89,52 @@
     echo "<tr><th>Event</th><td>", $f['Name'], "</td><td>", $t['Name'], "</td></tr>";
     echo "<tr><th>Date</th><td>", $f['Date'], "</td><td>", $t['Date'], "</td></tr>";
     echo "<tr><th>Location</th><td>", $f['Location'], "</td><td>", $t['Location'], "</td></tr>";
-    echo "<tr><th>Universe</th><td colspan=\"2\">", $ef['Universe'], "</td></tr>";
     echo "<tr><th>Type</th></td colspan=\"2\">", $ef['Type'], "</td></tr></table>";
   }
   function event_summary($id) {
     $ev = get_event($id=$id, $array=true);
     echo "<table><tr><th>Name</th><td>", $ev['Name'], "</td></tr>";
     echo "<tr><th>Date</th><td>", $ev['Date'], "</td></tr>";
-    echo "<tr><th>Location</th><td>", $ev['Location'], "</td></tr>";
-    echo "<tr><th>Universe</th><td>", $ev['Universe'], "</td></tr></table>";
+    echo "<tr><th>Location</th><td>", $ev['Location'], "</td></tr></table>";
+  }
+  $svg = 'height="360" width="7100"';// viewPort="-5000 -180 7100 360"';
+  $types = array('political' => 'red',
+                 'ideological' => 'blue'); //must be less than 15 chars
+  function is_valid_date($string) {
+    //return preg_match("/^-?\d+(\.\d+)?$/", $string) == 1;
+    return preg_match("/^\d{1,2}\/\d{1,2}\/\d{1,5}$/", $string) == 1;
+  }
+  function is_valid_place($string) {
+    return preg_match("/^\(-?\d+(\.\d+)?, -?\d+(\.\d+)?\)$/", $string) == 1;
+  }
+  function is_valid_type($string) {
+    global $types;
+    return array_key_exists($string, $types);
+  }
+  function get_effect_color($effect) {
+    global $types;
+    return $types[$effect['Type']];
+  }
+  function get_event_color($event) {
+    return 'red';
+  }
+  function get_space_coord($event) {
+    return sscanf($event['Location'], "(%f, %f)")[1] + 180;
+  }
+  function get_time_coord($event) {
+    //return sscanf($event['Date'], "%f")[0] + 5000;
+    sscanf($event['Date'], "%i/%i/%i", $m, $d, $y);
+    $months = array(0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 31, 31);
+    if ($y % 4 == 0 and ($y % 100 != 0 or $y % 400)) {
+      $months[2] += 1;
+    }
+    for ($i = 1; $i < 12; $i++) {
+      $months[$i] += $months[$i-1];
+    }
+    $yp = $months[$m - 1] + $d - 1;
+    if ($y < 0) {
+      $y++;
+    }
+    return $y + ($yp/$months[12]);
   }
 ?>
