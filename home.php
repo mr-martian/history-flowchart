@@ -3,7 +3,7 @@
     <title>Flowcharthistory.com</title>
   </head>
   <body>
-    <a href='get_graph/request_graph.php'>Make a graph</a>
+    <a href='get_graph/show_events.php'>Make a graph</a>
     <br>
     <!-- Herein describe this project and its reason for existence. -->
     <br>
