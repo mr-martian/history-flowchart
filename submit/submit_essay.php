@@ -1,7 +1,7 @@
 <html>
   <body>
     <?php
-      include "settings/general.php";
+      include "globals.php";
       $con = connect();
       if ($_GET['type'] == 'v') {
         event_summary($_GET['id']);
