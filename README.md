@@ -5,7 +5,7 @@ This program is intended to create flowcharts of history in the hope that this m
 #TODO
 - [ ] finish `formatting.html`
   - [ ] Human type list
-- [ ] `settings/human.php` type list
+- [ ] type list
 - [x] effect type system/checking
 - [x] `get_essay`
 - [ ] access to `submit_essay.php` from home page
