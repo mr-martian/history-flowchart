@@ -1,8 +1,33 @@
+<html>
+  <head>
+    <script>
+      function showhide() {
+        var start = document.getElementById("StartDate").value;
+        var end = document.getElementById("EndDate").value;
+        var lst = document.getElementsByTagName("tr");
+        for (var i = 1; i < lst.length; i++) {
+          var y = lst[i].childNodes[1].innerHTML;
+          var year = y.substr(y.lastIndexOf('/'))
+          if (start <= year <= end) {
+            lst[i].style.visibility = 'visible';
+          }
+          else {
+            lst[i].style.visibility = 'hidden';
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
 <?php
-  include "settings/general.php";
-  $result = get_event($universe=$_GET['u']);
-echo "<a href='" . $_GET['url'] . "?u=" . $_GET['u'] . "&e=*'>All of the below</a>";
+  include "globals.php";
+  $result = get_event();
+echo "<a href='" . $_GET['url'] . "?e=*'>All of the below</a>";
 echo "<p>Control-f is recommended for finding things on this list.</p>";
+echo "<form action=showhide()>";
+echo "Start Year: <input id='StartDate type='number'></input>";
+echo "End Year: <input id='EndDate' type='number'></input>";
+echo "<input type='submit'>Update</input></form>";
 echo "<table>
 <tr>
 <th>Name</th>
@@ -10,7 +35,7 @@ echo "<table>
 <th>Location</th>
 </tr>";
 
-$str = "<td><a href='" . $_GET['url'] . "?u=" . $_GET['u'] . "&e=";
+$str = "<td><a href='" . $_GET['url'] . "?e=";
 
 while($row = mysqli_fetch_array($result)) {
   echo "<tr>";
@@ -22,3 +47,5 @@ while($row = mysqli_fetch_array($result)) {
 
 echo "</table>";
 ?>
+</body>
+</html>
