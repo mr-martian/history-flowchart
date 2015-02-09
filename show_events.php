@@ -22,9 +22,10 @@
 <?php
   include "globals.php";
   $result = get_event();
-echo "<a href='" . $_GET['url'] . "?e=*'>All of the below</a>";
+  $url = $_GET['url'];
+echo "<a href='$url?e=*'>All of the below</a>";
 echo "<p>Control-f is recommended for finding things on this list.</p>";
-echo "<form action=showhide()>";
+echo "<form action='showhide()'>";
 echo "Start Year: <input id='StartDate type='number'></input>";
 echo "End Year: <input id='EndDate' type='number'></input>";
 echo "<input type='submit'>Update</input></form>";
@@ -35,7 +36,7 @@ echo "<table>
 <th>Location</th>
 </tr>";
 
-$str = "<td><a href='" . $_GET['url'] . "?e=";
+$str = "<td><a href='$url?e=";
 
 while($row = mysqli_fetch_array($result)) {
   echo "<tr>";
