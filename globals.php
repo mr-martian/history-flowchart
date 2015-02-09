@@ -5,10 +5,10 @@
   }
   function connect($usedb = true) {
     if ($usedb) {
-      $con=mysqli_connect("localhost", "root", "Plat0nic P0tat0", "flowchart_data"); //change password, username later
+      $con=mysqli_connect("localhost", "root", "password", "flowchart_data"); //change password, username later
     }
     else {
-      $con=mysqli_connect("localhost", "root", "Plat0nic P0tat0");
+      $con=mysqli_connect("localhost", "root", "password");
     }
     // Check connection
     if (!$con) {
