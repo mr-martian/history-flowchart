@@ -16,9 +16,12 @@
     echo 'Sorry, your location string is invalid. Please read the <a href="formatting.html">formatting directions</a> and try again.';
   }
   else {
-    $str = $_GET['name'] . "', '" . $_GET['universe'] . "', '" . $_GET['date'] . "', '" . $_GET['location'] . "')";
-    mysqli_query($con,"INSERT INTO Events (Name, Date, Location) VALUES ('" . $str);
-    $int = mysqli_fetch_array(mysqli_query($con, "SELECT * FROM Events WHERE Name = '" . $_GET['name'] . "'"))['PID'];
-    echo "<h1>Record Added Successfully!</h1><br><p>Click <a href='submit_essay.php?type=v&id=$int' target='submit'>here</a> to add an extended description.</p>\n";
+    if (mysqli_query($con,"INSERT INTO Events (Name, Date, Location) VALUES ('" . $_GET['name'] . "', '" . $_GET['date'] . "', '" . $_GET['location'] . "')")) {
+      $int = mysqli_fetch_array(mysqli_query($con, "SELECT * FROM Events WHERE Name = '" . $_GET['name'] . "'"))['PID'];
+      echo "<h1>Record Added Successfully!</h1><br><p>Click <a href='submit_essay.php?type=v&id=$int' target='submit'>here</a> to add an extended description.</p>\n";
+    }
+    else {
+      echo "ERROR: <br>" . mysqli_error($conn);
+    }
   }
 ?>
