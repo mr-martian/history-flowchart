@@ -9,7 +9,12 @@ This program is intended to create flowcharts of history in the hope that this m
 - [x] effect type system/checking
 - [x] `get_essay`
 - [x] access to `submit_essay.php` from home page
-- [ ] finish home page
-- [ ] flowchart customization
-  - [ ] date range restriction
+- [x] finish home page
+- [x] flowchart customization
+  - [ ] ~~date range restriction~~
   - [x] timeline
+- [ ] tags
+  - [ ] table in database
+  - [ ] viewing
+  - [ ] adding
+  - [ ] (in flowchart) filtering
