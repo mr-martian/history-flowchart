@@ -33,7 +33,7 @@
   }
   
   // Create table
-  $sql="CREATE TABLE Effects(PID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(PID), Cause INT(10), Effect INT(10), Type CHAR(15));";
+  $sql="CREATE TABLE Effects(PID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(PID), Cause INT(10), Effect INT(10));";
 
   // Execute query
   if (mysqli_query($con,$sql)) {
@@ -48,6 +48,17 @@
   // Execute query
   if (mysqli_query($con,$sql)) {
     echo "\nTable Fessays created successfully";
+  } else {
+    echo "\nError creating table: " . mysqli_error($con);
+  }
+  echo "\n";
+  
+  // Create table
+  $sql="CREATE TABLE Tags(Category INT(1), PID INT, Tag CHAR(20));";
+
+  // Execute query
+  if (mysqli_query($con,$sql)) {
+    echo "\nTable Tags created successfully";
   } else {
     echo "\nError creating table: " . mysqli_error($con);
   }
