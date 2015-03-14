@@ -8,35 +8,21 @@
   </head>
   <body>
     <h1>Formatting Instructions</h1>
-    <h2><a href="#" onclick="collapse('general')">General</a></h2>
-    <div id="general" style="display: none;">
-      <h3>Name</h3>
-      <p>30 or fewer characters. Numbers, letters, and spaces only.</p>
+    <h3><a href="#" onclick="collapse('name')">Name</a></h3>
+    <div id="name" style="display: none;">
+      <p>A reasonably descriptive identifier for the event, 30 or fewer characters. Numbers, letters, and spaces only.</p>
     </div>
-    <hr>
-    <h2><a href="#" onclick="collapse('human')">Human</a></h2>
-    <div id="human" style="display: none;">
-      <h3>Place</h3>
-      <b>(latitude, longitude)</b>
-      <p>Enter both as decimals, degrees north of the equator and east of Grenich.</p>
-      <h3>Date</h3>
-      <b>year</b>
-      <p>Enter as a decimal (e.g. 7/1/2014 =&gt; 2014.5), use negative numbers for BC.</p>
-      <p>Click <a href="http://www.wolframalpha.com/widgets/view.jsp?id=9920857cc88285c0a1609330d0167a1d">here</a> for a widget to simplify the process.</p>
-      <p>And click <a href="http://www.wolframalpha.com/widgets/view.jsp?id=2b75b78887461d57cdb24bad918be50">here</a> for BC.</p>
-      <h3>Type</h3>
-      <p>UNFINISHED</p>
+    <h3><a href="#" onclick="collapse('location')">Location</a></h3>
+    <div id="location" style="display: none;">
+      <p><b>(latitude, longitude)</b> enter both as decimals, degrees north and west.</p>
     </div>
-    <hr>
-    <h2><a href="#" onclick="collapse('natural')">Natural</a></h2>
-    <div id="natural" style="display: none;">
-      <h3>Place</h3>
-      <p>UNFINISHED</p>
-      <h3>Date</h3>
-      <b>year</b>
-      <p>In millions of years after the Big Bang.</p>
-      <h3>Type</h3>
-      <p>UNFINISHED</p>
+    <h3><a href="#" onclick="collapse('date')">Date</a></h3>
+    <div id="date" style="display: none;">
+      <p><b>m/d/y</b> use Gregorian calendar, -y for BC, default day: January 1. 15th of February, 256 BC => 2/15/-256</p>
+    </div>
+    <h3><a href="#" onclick="collapse('type')">Type</a></h3>
+    <div id="type" style="display: none;">
+      <p>The manner of causation from one event to another, one of <b>political</b>, <b>ideological</b>.</p>
     </div>
   </body>
 </html>
