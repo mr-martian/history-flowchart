@@ -16,7 +16,7 @@
     <a href='submit/submit_effect_c.php' target='submit'>Submit a cause-and-effect chain</a> - 
     <a href='get_essay/select_essay.php?m=v' target='submit'>Find an event</a> - 
     <a href='get_essay/select_essay.php?m=f' target='submit'>Find an effect</a>
-    <a href='' target='_blank'>About</a>
+    <a href='https://flowcharthistory.wordpress.com/2014/07/09/6/' target='_blank'>About</a>
     <table width="100%" height="90%">
       <tr>
         <td><iframe src="about:blank" name="submit" width="100%" height="100%"></iframe></td>
