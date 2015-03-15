@@ -13,7 +13,7 @@
     ?>
     <a href='request_graph.php' target='_blank'>Make a graph</a>
     <a href='submit/submit_event.html' target='submit'>Submit an event</a> - 
-    <a href='submit/submit_effect_c.php' target='submit'>Submit a cause-and-effect chain</a> - 
+    <a href='submit/submit_effect_c.php' target='submit'>Submit an effect</a> - 
     <a href='get_essay/select_essay.php?m=v' target='submit'>Find an event</a> - 
     <a href='get_essay/select_essay.php?m=f' target='submit'>Find an effect</a>
     <a href='https://flowcharthistory.wordpress.com/2014/07/09/6/' target='_blank'>About</a>
