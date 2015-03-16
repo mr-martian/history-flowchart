@@ -4,5 +4,5 @@ This program is intended to create flowcharts of history in the hope that this m
 
 #TODO
 - [ ] search by tag
-- [ ] change graph colors based on tags
-- [ ] clean up code
+- [x] change graph colors based on tags
+- [x] clean up code
