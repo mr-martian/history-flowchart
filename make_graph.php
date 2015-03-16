@@ -3,24 +3,34 @@
     <style>
       #mousepos {
         position: fixed;
-        top: 400px;
+        top: 0px;
         left: 25px;
         border: solid;
         padding: 3px;
       }
       #graph {
-        border-width: 0;
-        padding: 0;
-        margin: 0;
+        border-width: 0px;
+        padding: 0px;
+        margin: 0px;
       }
       div {
         border-width: 1px;
         border: solid;
       }
-      #hide {
-        position: fixed;
-        top: 450px;
-        overflow: hidden;
+      #color {
+        width: 420px;
+      }
+      circle {
+        stroke: black;
+        stroke-width: 1;
+        fill: red;
+      }
+      line {
+        stroke-width: 2.5px;
+        stroke: blue;
+      }
+      line.mark {
+        stroke-width: 4px;
       }
     </style>
   </head>
@@ -34,9 +44,7 @@
         $c = implode(" ", geteventtags($event['PID']));
         $id = $event['PID'];
         $n = $event['Name'];
-        $s0 = "<circle r='3' stroke='black' stroke-width='1' cx='$x' cy='$y' fill='red' class='";
-        $s1 = "$c' onclick='window.open(\"get_essay/get_essay.php?type=v&id=$id\")'><title>$n</title></circle>\n";
-        return $s0 . $s1;
+        return "<circle r='3.5' cx='$x' cy='$y' class='$c' onclick='window.open(\"get_essay/get_essay.php?type=v&id=$id\")'><title>$n</title></circle>\n";
       }
       function ef2svg($effect) {
         $f = get_event_array($effect['Cause']);
@@ -46,7 +54,7 @@
         $tx = get_time_coord($t);
         $ty = get_space_coord($t);
         $c = implode(" ", geteventtags($effect['Cause'])) . " " . implode(" ", geteventtags($effect['Effect']));
-        $s0 = "<line x1='$fx' y1='$fy' x2='$tx' y2='$ty' stroke-width='2' stroke='blue' class='$c'";
+        $s0 = "<line x1='$fx' y1='$fy' x2='$tx' y2='$ty' class='$c'";
         $s1 = " onclick='window.open(\"get_essay/get_essay.php?type=f&id=" . $effect['PID'];
         $s2 = "\")' marker-end='url(#triangle)'><title>" . $f['Name'] . ' to ' . $t['Name'];
         return $s0 . $s1 . $s2 . '</title></line>\n';
@@ -105,23 +113,25 @@
       graph();
       echo '</g>';
       for ($x = 0; $x < 7100; $x += 100) {
-        echo "<line x1='$x' y1='360' x2='$x' y2='375' stroke-width='5' stroke='blue' /><text x='$x' y='385'>";
+        echo "<line class='mark' x1='$x' y1='360' x2='$x' y2='375' /><text x='$x' y='385'>";
         $y = $x - 5000;
         if ($y == 0) {echo "AD 1"; }
         elseif ($y < 1) { echo strval(-$y) . " BC"; }
-        else { echo "AD" . strval($y); }
+        else { echo "AD " . strval($y); }
         echo "</text>\n";
       }
       echo '</svg>';
       echo '<p id="mousepos">0,0</p>';
       $x = getalltags();
-      echo "<div id='hide'><h4>Hide events with tags:</h4>";
+      echo "<table id='controls'><tr><td><div id='hide'><h4>Hide events with tags:</h4>";
       foreach ($x as $i) {
-        echo "<input type='checkbox' value='$i'>$i</input>\n";
+        echo "<input type='checkbox' id='$i' value='$i'><label for='$i'>$i</label></input>\n";
       }
-      echo "<br><button id='update' onclick='dochecks();'>Update</button></div>";
+      echo "<br><button id='update' onclick='dochecks();'>Update</button></div></td>";
+      echo '<td><div id="color"></div></td></tr></table>';
     ?>
-  <script type="text/javascript" src="graph_mouse.js"></script>
-  <script type="text/javascript" src="graph_filter.js"></script>
+    <script type="text/javascript" src="graph_mouse.js"></script>
+    <script type="text/javascript" src="graph_filter.js"></script>
+    <script type="text/javascript" src="graph_color.js"></script>
   </body>
 </html>
